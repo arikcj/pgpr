@@ -1,0 +1,154 @@
+\hypertarget{classpsvm_1_1_g_p_predictor}{\section{psvm\-:\-:G\-P\-Predictor Class Reference}
+\label{classpsvm_1_1_g_p_predictor}\index{psvm\-::\-G\-P\-Predictor@{psvm\-::\-G\-P\-Predictor}}
+}
+
+
+Predict the labels of test cases with parallel I\-C\-F Gaussian Process.  
+
+
+
+
+{\ttfamily \#include $<$pgpr\-\_\-picf\-\_\-predict.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classpsvm_1_1_g_p_predictor_a401b72ee3267f091714ace9e0973bf01}{Model\-Predict} (string \&train\-\_\-file, string \&test\-\_\-file, double rank\-\_\-ratio)
+\begin{DoxyCompactList}\small\item\em This function prodvides the final interface to use the train file to predict all cases in test file. \end{DoxyCompactList}\item 
+void \hyperlink{classpsvm_1_1_g_p_predictor_a7141bfbe2731cf1ebcf7579da171b9a4}{Get\-Mean} (double $\ast$val, int len)
+\begin{DoxyCompactList}\small\item\em This function return the mean to a vector of double, user need to allocate space for the vector and destroy the vector after use. \end{DoxyCompactList}\item 
+void \hyperlink{classpsvm_1_1_g_p_predictor_a4c6662484395256ef10a337112022222}{Get\-Variance} (double $\ast$val, int len)
+\begin{DoxyCompactList}\small\item\em This function return the variance to a vector of double, user need to allocate space for the vector and destroy the vector after use. \end{DoxyCompactList}\item 
+void \hyperlink{classpsvm_1_1_g_p_predictor_a344dac46576dee127f0bf8e67cf53314}{Get\-True\-Value} (double $\ast$val, int len)
+\begin{DoxyCompactList}\small\item\em This function returns the true values of test cases to a vector of double, user need to allocate space for the vector and destroy the vector after use. \end{DoxyCompactList}\item 
+void \hyperlink{classpsvm_1_1_g_p_predictor_ae6d9145653cef7c2c396a6a00b4d00f4}{Save\-Result} (const char $\ast$file\-\_\-name)
+\begin{DoxyCompactList}\small\item\em This function save the time, true values, predicted means, variance into one file. \end{DoxyCompactList}\item 
+double \hyperlink{classpsvm_1_1_g_p_predictor_ad4ead64375a1da166962e28810d7673e}{Get\-Run\-Time} ()
+\begin{DoxyCompactList}\small\item\em Return the running time. \end{DoxyCompactList}\item 
+\hypertarget{classpsvm_1_1_g_p_predictor_a07da10ffdadaa7f0950d684f32d1b270}{void {\bfseries Set\-Run\-Time} (double time\-\_\-)}\label{classpsvm_1_1_g_p_predictor_a07da10ffdadaa7f0950d684f32d1b270}
+
+\item 
+\hypertarget{classpsvm_1_1_g_p_predictor_a090b81645d43ce348b1fb0c2175603d5}{{\bfseries G\-P\-Predictor} (string \&hp\-\_\-file)}\label{classpsvm_1_1_g_p_predictor_a090b81645d43ce348b1fb0c2175603d5}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Predict the labels of test cases with parallel I\-C\-F Gaussian Process. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classpsvm_1_1_g_p_predictor_a7141bfbe2731cf1ebcf7579da171b9a4}{\index{psvm\-::\-G\-P\-Predictor@{psvm\-::\-G\-P\-Predictor}!Get\-Mean@{Get\-Mean}}
+\index{Get\-Mean@{Get\-Mean}!psvm::GPPredictor@{psvm\-::\-G\-P\-Predictor}}
+\subsubsection[{Get\-Mean}]{\setlength{\rightskip}{0pt plus 5cm}void psvm\-::\-G\-P\-Predictor\-::\-Get\-Mean (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{val, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classpsvm_1_1_g_p_predictor_a7141bfbe2731cf1ebcf7579da171b9a4}
+
+
+This function return the mean to a vector of double, user need to allocate space for the vector and destroy the vector after use. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & vector to store values of mean \\
+\hline
+{\em len} & length of vector \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpsvm_1_1_g_p_predictor_ad4ead64375a1da166962e28810d7673e}{\index{psvm\-::\-G\-P\-Predictor@{psvm\-::\-G\-P\-Predictor}!Get\-Run\-Time@{Get\-Run\-Time}}
+\index{Get\-Run\-Time@{Get\-Run\-Time}!psvm::GPPredictor@{psvm\-::\-G\-P\-Predictor}}
+\subsubsection[{Get\-Run\-Time}]{\setlength{\rightskip}{0pt plus 5cm}double psvm\-::\-G\-P\-Predictor\-::\-Get\-Run\-Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classpsvm_1_1_g_p_predictor_ad4ead64375a1da166962e28810d7673e}
+
+
+Return the running time. 
+
+\begin{DoxyReturn}{Returns}
+time used for predict mean and predict variance 
+\end{DoxyReturn}
+\hypertarget{classpsvm_1_1_g_p_predictor_a344dac46576dee127f0bf8e67cf53314}{\index{psvm\-::\-G\-P\-Predictor@{psvm\-::\-G\-P\-Predictor}!Get\-True\-Value@{Get\-True\-Value}}
+\index{Get\-True\-Value@{Get\-True\-Value}!psvm::GPPredictor@{psvm\-::\-G\-P\-Predictor}}
+\subsubsection[{Get\-True\-Value}]{\setlength{\rightskip}{0pt plus 5cm}void psvm\-::\-G\-P\-Predictor\-::\-Get\-True\-Value (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{val, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classpsvm_1_1_g_p_predictor_a344dac46576dee127f0bf8e67cf53314}
+
+
+This function returns the true values of test cases to a vector of double, user need to allocate space for the vector and destroy the vector after use. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & vector to store values of variances \\
+\hline
+{\em len} & length of vector \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpsvm_1_1_g_p_predictor_a4c6662484395256ef10a337112022222}{\index{psvm\-::\-G\-P\-Predictor@{psvm\-::\-G\-P\-Predictor}!Get\-Variance@{Get\-Variance}}
+\index{Get\-Variance@{Get\-Variance}!psvm::GPPredictor@{psvm\-::\-G\-P\-Predictor}}
+\subsubsection[{Get\-Variance}]{\setlength{\rightskip}{0pt plus 5cm}void psvm\-::\-G\-P\-Predictor\-::\-Get\-Variance (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{val, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classpsvm_1_1_g_p_predictor_a4c6662484395256ef10a337112022222}
+
+
+This function return the variance to a vector of double, user need to allocate space for the vector and destroy the vector after use. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & vector to store values of variances \\
+\hline
+{\em len} & length of vector \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpsvm_1_1_g_p_predictor_a401b72ee3267f091714ace9e0973bf01}{\index{psvm\-::\-G\-P\-Predictor@{psvm\-::\-G\-P\-Predictor}!Model\-Predict@{Model\-Predict}}
+\index{Model\-Predict@{Model\-Predict}!psvm::GPPredictor@{psvm\-::\-G\-P\-Predictor}}
+\subsubsection[{Model\-Predict}]{\setlength{\rightskip}{0pt plus 5cm}void psvm\-::\-G\-P\-Predictor\-::\-Model\-Predict (
+\begin{DoxyParamCaption}
+\item[{string \&}]{train\-\_\-file, }
+\item[{string \&}]{test\-\_\-file, }
+\item[{double}]{rank\-\_\-ratio}
+\end{DoxyParamCaption}
+)}}\label{classpsvm_1_1_g_p_predictor_a401b72ee3267f091714ace9e0973bf01}
+
+
+This function prodvides the final interface to use the train file to predict all cases in test file. 
+
+This function will provide the interface to do predicting. It simply does parallel I\-C\-F then does prediction. 
+\begin{DoxyParams}{Parameters}
+{\em train\-\_\-file} & the train file each line formatted as\-: label 0\-:value 1\-:value ... \\
+\hline
+{\em test\-\_\-file} & the test file, each line formatted as train file \\
+\hline
+{\em rank\-\_\-ratio} & the support rank / total number of observations \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpsvm_1_1_g_p_predictor_ae6d9145653cef7c2c396a6a00b4d00f4}{\index{psvm\-::\-G\-P\-Predictor@{psvm\-::\-G\-P\-Predictor}!Save\-Result@{Save\-Result}}
+\index{Save\-Result@{Save\-Result}!psvm::GPPredictor@{psvm\-::\-G\-P\-Predictor}}
+\subsubsection[{Save\-Result}]{\setlength{\rightskip}{0pt plus 5cm}void psvm\-::\-G\-P\-Predictor\-::\-Save\-Result (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{file\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{classpsvm_1_1_g_p_predictor_ae6d9145653cef7c2c396a6a00b4d00f4}
+
+
+This function save the time, true values, predicted means, variance into one file. 
+
+The format is like this, first line is time, then other lines are values of true labels, mean, variance. format\-: time time time true\-Label mean var true\-Label mean var ... 
+\begin{DoxyParams}{Parameters}
+{\em file\-\_\-name} & File name to store those values \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{pgpr__picf__predict_8h}{pgpr\-\_\-picf\-\_\-predict.\-h}\item 
+src/pgpr\-\_\-picf\-\_\-predict.\-cc\end{DoxyCompactItemize}

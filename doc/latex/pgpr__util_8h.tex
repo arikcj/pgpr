@@ -1,0 +1,301 @@
+\hypertarget{pgpr__util_8h}{\section{src/pgpr\-\_\-util.h File Reference}
+\label{pgpr__util_8h}\index{src/pgpr\-\_\-util.\-h@{src/pgpr\-\_\-util.\-h}}
+}
+
+
+This file contains a collection of useful functions such as macro-\/like inline functions, debug functions, exception handling, file I/\-O, and a real-\/time timer class.  
+
+
+{\ttfamily \#include $<$sys/time.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}pgpr\-\_\-type.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pgpr\-\_\-chol.\-h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpgpr__timer}{pgpr\-\_\-timer}
+\begin{DoxyCompactList}\small\item\em This timer class can provide real-\/time measure (in seconds) incurred by a block of running program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{pgpr__util_8h_aa43646fbb6338cd32a87689a1418c5d2}{\#define {\bfseries L\-E\-V\-\_\-\-P\-R\-G}~0}\label{pgpr__util_8h_aa43646fbb6338cd32a87689a1418c5d2}
+
+\item 
+\hypertarget{pgpr__util_8h_ad1c039318db5129eddc873727383e433}{\#define {\bfseries L\-E\-V\-\_\-\-D\-B\-G}~5}\label{pgpr__util_8h_ad1c039318db5129eddc873727383e433}
+
+\item 
+\hypertarget{pgpr__util_8h_a6e7b32669f7e5c3a29b49e2c9a643bf1}{\#define {\bfseries L\-E\-V\-\_\-\-A\-L\-L}~10}\label{pgpr__util_8h_a6e7b32669f7e5c3a29b49e2c9a643bf1}
+
+\item 
+\hypertarget{pgpr__util_8h_a4ce40ad99fc78edc7a7eeb9e86b31f5f}{\#define {\bfseries C\-U\-R\-L\-E\-V}~L\-E\-V\-\_\-\-P\-R\-G}\label{pgpr__util_8h_a4ce40ad99fc78edc7a7eeb9e86b31f5f}
+
+\item 
+\hypertarget{pgpr__util_8h_ac5f56ec7eece1180dbcf7f5a7d4edead}{\#define {\bfseries R\-A\-N\-I}(x)~(Int)((Doub)rand()/R\-A\-N\-D\-\_\-\-M\-A\-X$\ast$x)}\label{pgpr__util_8h_ac5f56ec7eece1180dbcf7f5a7d4edead}
+
+\item 
+\hypertarget{pgpr__util_8h_abe5d2008788edf24f2dc0a62ffb94969}{\#define {\bfseries S\-R\-A\-N\-D}(x)~srand(x); rand()}\label{pgpr__util_8h_abe5d2008788edf24f2dc0a62ffb94969}
+
+\item 
+\hypertarget{pgpr__util_8h_af855c94dc540e943632089ce7496faac}{\#define {\bfseries L\-O\-G}(x)~log(x)}\label{pgpr__util_8h_af855c94dc540e943632089ce7496faac}
+
+\item 
+\hypertarget{pgpr__util_8h_ae52c48592a33f8f3db9592f7be0502f3}{\#define {\bfseries S\-Q\-R\-T}(x)~sqrt(x)}\label{pgpr__util_8h_ae52c48592a33f8f3db9592f7be0502f3}
+
+\item 
+\hypertarget{pgpr__util_8h_a179978530f93b1e13bc48dc40dc1960e}{\#define {\bfseries E\-X\-P}(x)~exp(x)}\label{pgpr__util_8h_a179978530f93b1e13bc48dc40dc1960e}
+
+\item 
+\hypertarget{pgpr__util_8h_ad3fdc89d294523ce27c49c1c4b34f558}{\#define {\bfseries P\-O\-W}(x, y)~(Int)pow((Doub)(x),(Doub)(y))}\label{pgpr__util_8h_ad3fdc89d294523ce27c49c1c4b34f558}
+
+\item 
+\hypertarget{pgpr__util_8h_ab2f81ff1d494a8318e0128d6e5af2e2d}{\#define {\bfseries take\-Samp}(a, b, d)~for(int \-\_\-i=0; \-\_\-i$<$d; \-\_\-i++) b\mbox{[}\-\_\-i\mbox{]}=a\mbox{[}\-\_\-i\mbox{]}}\label{pgpr__util_8h_ab2f81ff1d494a8318e0128d6e5af2e2d}
+
+\item 
+\hypertarget{pgpr__util_8h_a93cc594b7df033d58071d897f081b005}{\#define {\bfseries pcp}(x)~pmsg(L\-E\-V\-\_\-\-D\-B\-G,stdout,\char`\"{}Check\-Point$>$ \%d\textbackslash{}n\char`\"{},x)}\label{pgpr__util_8h_a93cc594b7df033d58071d897f081b005}
+
+\item 
+\hypertarget{pgpr__util_8h_a1ff6be3f8adfcef1fc19e702e2dcfa4a}{\#define {\bfseries pcpst}(x)~pmsg(L\-E\-V\-\_\-\-D\-B\-G,stdout,\char`\"{}\mbox{[}\%d\mbox{]} start$>$\textbackslash{}n\char`\"{},x)}\label{pgpr__util_8h_a1ff6be3f8adfcef1fc19e702e2dcfa4a}
+
+\item 
+\hypertarget{pgpr__util_8h_a06e6ee74d7ca48f7ce8fa6d551d5806e}{\#define {\bfseries pcpen}(x)~pmsg(L\-E\-V\-\_\-\-D\-B\-G,stdout,\char`\"{}\mbox{[}\%d\mbox{]} end\# \textbackslash{}n\char`\"{},x)}\label{pgpr__util_8h_a06e6ee74d7ca48f7ce8fa6d551d5806e}
+
+\item 
+\hypertarget{pgpr__util_8h_a98483c18e8e701f60018f324695cc6d5}{\#define {\bfseries pcp\-\_\-s}(s, x)~pmsg(L\-E\-V\-\_\-\-D\-B\-G,stdout,\char`\"{} \%s $>$ \%.\-4lf\textbackslash{}n\char`\"{},s,(double)x)}\label{pgpr__util_8h_a98483c18e8e701f60018f324695cc6d5}
+
+\item 
+\#define {\bfseries pvec}(vec)
+\item 
+\#define {\bfseries pvec\-\_\-r}(vec, vsize)
+\item 
+\#define {\bfseries pvec\-\_\-s}(\-\_\-s, vec)
+\item 
+\#define {\bfseries pmat\-\_\-r}(mat, \-\_\-r)
+\item 
+\#define {\bfseries pmat\-\_\-pos}(mat)
+\item 
+\#define {\bfseries pmat}(mat)
+\item 
+\#define {\bfseries pmat\-\_\-s}(\-\_\-s, mat)
+\item 
+\hypertarget{pgpr__util_8h_a9de9d1938b45c8e50010d931da53ab2d}{\#define {\bfseries throw}(message)~\{printf(\char`\"{}E\-R\-R\-O\-R\-: \%s\textbackslash{}n     in file \%s at line \%d\textbackslash{}n\char`\"{}, message,\-\_\-\-\_\-\-F\-I\-L\-E\-\_\-\-\_\-,\-\_\-\-\_\-\-L\-I\-N\-E\-\_\-\-\_\-); throw(1);\}}\label{pgpr__util_8h_a9de9d1938b45c8e50010d931da53ab2d}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{pgpr__util_8h_a06d1c40d0369212d1b6fa6ecd3bb9fbd}{{\footnotesize template$<$class T $>$ }\\T {\bfseries S\-Q\-R} (const T a)}\label{pgpr__util_8h_a06d1c40d0369212d1b6fa6ecd3bb9fbd}
+
+\item 
+\hypertarget{pgpr__util_8h_a209bcb7d618351acd2e2ae728a0a4a03}{{\footnotesize template$<$class T $>$ }\\const T \& {\bfseries M\-A\-X} (const T \&a, const T \&b)}\label{pgpr__util_8h_a209bcb7d618351acd2e2ae728a0a4a03}
+
+\item 
+\hypertarget{pgpr__util_8h_af81927aa1249cf37ac3750267885b120}{float {\bfseries M\-A\-X} (const double \&a, const float \&b)}\label{pgpr__util_8h_af81927aa1249cf37ac3750267885b120}
+
+\item 
+\hypertarget{pgpr__util_8h_a3e7d146382ee63a63057d0d1da21681c}{float {\bfseries M\-A\-X} (const float \&a, const double \&b)}\label{pgpr__util_8h_a3e7d146382ee63a63057d0d1da21681c}
+
+\item 
+\hypertarget{pgpr__util_8h_a9e57865c72ea6681c364d10f79cf175a}{{\footnotesize template$<$class T $>$ }\\const T \& {\bfseries M\-I\-N} (const T \&a, const T \&b)}\label{pgpr__util_8h_a9e57865c72ea6681c364d10f79cf175a}
+
+\item 
+\hypertarget{pgpr__util_8h_a2cfa98af017775923db28dc7c2e20172}{float {\bfseries M\-I\-N} (const double \&a, const float \&b)}\label{pgpr__util_8h_a2cfa98af017775923db28dc7c2e20172}
+
+\item 
+\hypertarget{pgpr__util_8h_a3d33ecea9b81bb92f8eea3582752aa9a}{float {\bfseries M\-I\-N} (const float \&a, const double \&b)}\label{pgpr__util_8h_a3d33ecea9b81bb92f8eea3582752aa9a}
+
+\item 
+\hypertarget{pgpr__util_8h_ac5bb90632c74845e7dc3cb8c46a1fbdd}{{\footnotesize template$<$class T $>$ }\\T {\bfseries S\-I\-G\-N} (const T \&a, const T \&b)}\label{pgpr__util_8h_ac5bb90632c74845e7dc3cb8c46a1fbdd}
+
+\item 
+\hypertarget{pgpr__util_8h_a050c6451d15aaccc09c71cc4a383b8f7}{float {\bfseries S\-I\-G\-N} (const float \&a, const double \&b)}\label{pgpr__util_8h_a050c6451d15aaccc09c71cc4a383b8f7}
+
+\item 
+\hypertarget{pgpr__util_8h_aae9be2b78e310ebaae80d3a980ef37c3}{float {\bfseries S\-I\-G\-N} (const double \&a, const float \&b)}\label{pgpr__util_8h_aae9be2b78e310ebaae80d3a980ef37c3}
+
+\item 
+\hypertarget{pgpr__util_8h_a7c47ab41142fb494373b0b511cfe219b}{{\footnotesize template$<$class T $>$ }\\void {\bfseries S\-W\-A\-P} (T \&a, T \&b)}\label{pgpr__util_8h_a7c47ab41142fb494373b0b511cfe219b}
+
+\item 
+\hypertarget{pgpr__util_8h_a21662d98c0459a96314b58776dc8b93c}{Int {\bfseries get\-Lines} (Char $\ast$file)}\label{pgpr__util_8h_a21662d98c0459a96314b58776dc8b93c}
+
+\item 
+\hypertarget{pgpr__util_8h_a74dc21ad25985bd3063ee0c1e7e1f6a0}{Int {\bfseries save\-Data} (Char $\ast$file, \hyperlink{classpgpr__matrix}{Mdoub} m\-\_\-data)}\label{pgpr__util_8h_a74dc21ad25985bd3063ee0c1e7e1f6a0}
+
+\item 
+\hypertarget{pgpr__util_8h_a4aa30557a4052cc2ed2f07c16d7a5ceb}{Int {\bfseries load\-Data} (Char $\ast$file, \hyperlink{classpgpr__matrix}{Mdoub} \&m\-\_\-data)}\label{pgpr__util_8h_a4aa30557a4052cc2ed2f07c16d7a5ceb}
+
+\item 
+\hypertarget{pgpr__util_8h_ad49a24bf917ce2513e2d78b253e7d538}{Int {\bfseries save\-Hyper} (Char $\ast$file, \hyperlink{classpgpr__vector}{Vdoub} h, Int d)}\label{pgpr__util_8h_ad49a24bf917ce2513e2d78b253e7d538}
+
+\item 
+\hypertarget{pgpr__util_8h_a7bf48c07ed663913fac522d9b20b7225}{void {\bfseries pmsg} (int level, F\-I\-L\-E $\ast$outfp, const char $\ast$format,...)}\label{pgpr__util_8h_a7bf48c07ed663913fac522d9b20b7225}
+
+\item 
+\hypertarget{pgpr__util_8h_aefe36f617c26ccd3ac34138615a6cff3}{void {\bfseries bubble\-\_\-sort} (\hyperlink{classpgpr__vector}{Vdoub} a, \hyperlink{classpgpr__vector}{Vint} \&ai)}\label{pgpr__util_8h_aefe36f617c26ccd3ac34138615a6cff3}
+
+\item 
+\hypertarget{pgpr__util_8h_acc16d3fa0a3cd13e6a2e536b89cc90aa}{Int {\bfseries argmaxi} (\hyperlink{classpgpr__vector}{Vdoub} v)}\label{pgpr__util_8h_acc16d3fa0a3cd13e6a2e536b89cc90aa}
+
+\item 
+\hypertarget{pgpr__util_8h_a09c74a006e3f9cef8c2ff27cb65937d2}{Doub {\bfseries get\-Rmse} (\hyperlink{classpgpr__vector}{Vdoub} v1, \hyperlink{classpgpr__vector}{Vdoub} v2)}\label{pgpr__util_8h_a09c74a006e3f9cef8c2ff27cb65937d2}
+
+\item 
+\hypertarget{pgpr__util_8h_ace8da99b106d77c09cdabccb5640cb32}{Doub {\bfseries get\-Mnlp} (\hyperlink{classpgpr__vector}{Vdoub} v1, \hyperlink{classpgpr__vector}{Vdoub} v2, \hyperlink{classpgpr__vector}{Vdoub} v3)}\label{pgpr__util_8h_ace8da99b106d77c09cdabccb5640cb32}
+
+\item 
+\hypertarget{pgpr__util_8h_a04a40c19efa77e2b6d593b78a4613403}{Int {\bfseries A\-\_\-inv\-B\-\_\-\-C} (\hyperlink{classpgpr__matrix}{Mdoub} A, \hyperlink{classpgpr__chol}{pgpr\-\_\-chol} $\ast$chol\-\_\-b, \hyperlink{classpgpr__vector}{Vdoub} C, \hyperlink{classpgpr__vector}{Vdoub} \&D)}\label{pgpr__util_8h_a04a40c19efa77e2b6d593b78a4613403}
+
+\item 
+\hypertarget{pgpr__util_8h_a9f6c2b463bef982481ac02b170fdef06}{Int {\bfseries A\-\_\-inv\-B\-\_\-\-C} (\hyperlink{classpgpr__matrix}{Mdoub} A, \hyperlink{classpgpr__chol}{pgpr\-\_\-chol} $\ast$chol\-\_\-b, \hyperlink{classpgpr__matrix}{Mdoub} C, \hyperlink{classpgpr__matrix}{Mdoub} \&D)}\label{pgpr__util_8h_a9f6c2b463bef982481ac02b170fdef06}
+
+\item 
+\hypertarget{pgpr__util_8h_ab8cc9714e7a5f09be2e4e4059d5cc92b}{Int {\bfseries A\-\_\-inv\-B\-\_\-trans\-C} (\hyperlink{classpgpr__matrix}{Mdoub} A, \hyperlink{classpgpr__chol}{pgpr\-\_\-chol} $\ast$chol\-\_\-b, \hyperlink{classpgpr__matrix}{Mdoub} C, \hyperlink{classpgpr__matrix}{Mdoub} \&D)}\label{pgpr__util_8h_ab8cc9714e7a5f09be2e4e4059d5cc92b}
+
+\item 
+\hypertarget{pgpr__util_8h_aa6443f4b0f6f61a1d9dd728abb5be1ad}{Int {\bfseries A\-\_\-inv\-B\-\_\-\-C} (\hyperlink{classpgpr__matrix}{Mdoub} A, \hyperlink{classpgpr__chol}{pgpr\-\_\-chol} $\ast$chol\-\_\-b, \hyperlink{classpgpr__matrix}{Mdoub} \&D)}\label{pgpr__util_8h_aa6443f4b0f6f61a1d9dd728abb5be1ad}
+
+\item 
+\hypertarget{pgpr__util_8h_a37044eb169b448f91f70ac9dca469aa5}{Int {\bfseries trace\-\_\-\-A\-\_\-inv\-B\-\_\-\-C} (\hyperlink{classpgpr__matrix}{Mdoub} A, \hyperlink{classpgpr__chol}{pgpr\-\_\-chol} $\ast$chol\-\_\-b, \hyperlink{classpgpr__matrix}{Mdoub} C, \hyperlink{classpgpr__vector}{Vdoub} \&D)}\label{pgpr__util_8h_a37044eb169b448f91f70ac9dca469aa5}
+
+\item 
+\hypertarget{pgpr__util_8h_a964f05f3b78789c4db237324ea4f6ef0}{Int {\bfseries trace\-\_\-\-A\-\_\-inv\-B\-\_\-\-C} (\hyperlink{classpgpr__matrix}{Mdoub} A, \hyperlink{classpgpr__chol}{pgpr\-\_\-chol} $\ast$chol\-\_\-b, \hyperlink{classpgpr__vector}{Vdoub} \&D)}\label{pgpr__util_8h_a964f05f3b78789c4db237324ea4f6ef0}
+
+\item 
+\hypertarget{pgpr__util_8h_aa8bd15de42604e1b283dd5dd64378471}{Int {\bfseries trace\-\_\-\-A\-\_\-inv\-B\-\_\-trans\-C} (\hyperlink{classpgpr__matrix}{Mdoub} A, \hyperlink{classpgpr__chol}{pgpr\-\_\-chol} $\ast$chol\-\_\-b, \hyperlink{classpgpr__matrix}{Mdoub} C, \hyperlink{classpgpr__vector}{Vdoub} \&D)}\label{pgpr__util_8h_aa8bd15de42604e1b283dd5dd64378471}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains a collection of useful functions such as macro-\/like inline functions, debug functions, exception handling, file I/\-O, and a real-\/time timer class. \begin{DoxyAuthor}{Author}
+C\-H\-E\-N jie, \href{mailto:arik.cj@gmail.com}{\tt arik.\-cj@gmail.\-com}
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{pgpr__util_8h_a60074f2ab66477e31244f47c57c371d3}{\index{pgpr\-\_\-util.\-h@{pgpr\-\_\-util.\-h}!pmat@{pmat}}
+\index{pmat@{pmat}!pgpr_util.h@{pgpr\-\_\-util.\-h}}
+\subsubsection[{pmat}]{\setlength{\rightskip}{0pt plus 5cm}\#define pmat(
+\begin{DoxyParamCaption}
+\item[{}]{mat}
+\end{DoxyParamCaption}
+)}}\label{pgpr__util_8h_a60074f2ab66477e31244f47c57c371d3}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{for}(Int \_i=0; \_i<mat.nrows(); \_i++)\(\backslash\)
+    \{\(\backslash\)
+        for(Int \_j=0; \_j<mat.ncols(); \_j++)\(\backslash\)
+        \{\(\backslash\)
+            pmsg(LEV\_DBG,stdout,\textcolor{stringliteral}{"%.4f "},(\textcolor{keywordtype}{double})mat[\_i][\_j]);\(\backslash\)
+        \}\(\backslash\)
+        pmsg(LEV\_DBG,stdout,\textcolor{stringliteral}{"\(\backslash\)n"});\(\backslash\)
+    \}\(\backslash\)
+\end{DoxyCode}
+\hypertarget{pgpr__util_8h_a9be447bf3f4b14fd989ce9fc57aa63bd}{\index{pgpr\-\_\-util.\-h@{pgpr\-\_\-util.\-h}!pmat\-\_\-pos@{pmat\-\_\-pos}}
+\index{pmat\-\_\-pos@{pmat\-\_\-pos}!pgpr_util.h@{pgpr\-\_\-util.\-h}}
+\subsubsection[{pmat\-\_\-pos}]{\setlength{\rightskip}{0pt plus 5cm}\#define pmat\-\_\-pos(
+\begin{DoxyParamCaption}
+\item[{}]{mat}
+\end{DoxyParamCaption}
+)}}\label{pgpr__util_8h_a9be447bf3f4b14fd989ce9fc57aa63bd}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{for}(Int \_i=0; \_i<mat.nrows(); \_i++)\(\backslash\)
+    \{\(\backslash\)
+        for(Int \_j=0; \_j<mat.ncols(); \_j++)\(\backslash\)
+        \{\(\backslash\)
+            if(mat[\_i][\_j]<0) break;\(\backslash\)
+            pmsg(LEV\_DBG,stdout,"%.4f ",(\textcolor{keywordtype}{double})mat[\_i][\_j]);\(\backslash\)
+        \}\(\backslash\)
+        pmsg(LEV\_DBG,stdout,"\(\backslash\)n");\(\backslash\)
+    \}\(\backslash\)
+\end{DoxyCode}
+\hypertarget{pgpr__util_8h_adfb3f244639b4a9e03b8677d09453de1}{\index{pgpr\-\_\-util.\-h@{pgpr\-\_\-util.\-h}!pmat\-\_\-r@{pmat\-\_\-r}}
+\index{pmat\-\_\-r@{pmat\-\_\-r}!pgpr_util.h@{pgpr\-\_\-util.\-h}}
+\subsubsection[{pmat\-\_\-r}]{\setlength{\rightskip}{0pt plus 5cm}\#define pmat\-\_\-r(
+\begin{DoxyParamCaption}
+\item[{}]{mat, }
+\item[{}]{\-\_\-r}
+\end{DoxyParamCaption}
+)}}\label{pgpr__util_8h_adfb3f244639b4a9e03b8677d09453de1}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{for}(Int \_i=0; \_i<\_r; \_i++)\(\backslash\)
+    \{\(\backslash\)
+        for(Int \_j=0; \_j<\_r; \_j++)\(\backslash\)
+        \{\(\backslash\)
+            pmsg(LEV\_DBG,stdout,\textcolor{stringliteral}{"%.4f "},(\textcolor{keywordtype}{double})mat[\_i][\_j]);\(\backslash\)
+        \}\(\backslash\)
+        pmsg(LEV\_DBG,stdout,\textcolor{stringliteral}{"\(\backslash\)n"});\(\backslash\)
+    \}\(\backslash\)
+\end{DoxyCode}
+\hypertarget{pgpr__util_8h_adbce0312b885ab4e47b37e182b2437dc}{\index{pgpr\-\_\-util.\-h@{pgpr\-\_\-util.\-h}!pmat\-\_\-s@{pmat\-\_\-s}}
+\index{pmat\-\_\-s@{pmat\-\_\-s}!pgpr_util.h@{pgpr\-\_\-util.\-h}}
+\subsubsection[{pmat\-\_\-s}]{\setlength{\rightskip}{0pt plus 5cm}\#define pmat\-\_\-s(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-s, }
+\item[{}]{mat}
+\end{DoxyParamCaption}
+)}}\label{pgpr__util_8h_adbce0312b885ab4e47b37e182b2437dc}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+pmsg(LEV\_DBG,stdout,\textcolor{stringliteral}{"%s:\(\backslash\)n"},\_s);\(\backslash\)
+    for(Int \_i=0; \_i<mat.nrows(); \_i++)\(\backslash\)
+    \{\(\backslash\)
+        for(Int \_j=0; \_j<mat.ncols(); \_j++)\(\backslash\)
+        \{\(\backslash\)
+            pmsg(LEV\_DBG,stdout,\textcolor{stringliteral}{"%.4f "},(\textcolor{keywordtype}{double})mat[\_i][\_j]);\(\backslash\)
+        \}\(\backslash\)
+        pmsg(LEV\_DBG,stdout,\textcolor{stringliteral}{"\(\backslash\)n"});\(\backslash\)
+    \}\(\backslash\)
+\end{DoxyCode}
+\hypertarget{pgpr__util_8h_a6e4b06dca33a33b367a54984d96a865a}{\index{pgpr\-\_\-util.\-h@{pgpr\-\_\-util.\-h}!pvec@{pvec}}
+\index{pvec@{pvec}!pgpr_util.h@{pgpr\-\_\-util.\-h}}
+\subsubsection[{pvec}]{\setlength{\rightskip}{0pt plus 5cm}\#define pvec(
+\begin{DoxyParamCaption}
+\item[{}]{vec}
+\end{DoxyParamCaption}
+)}}\label{pgpr__util_8h_a6e4b06dca33a33b367a54984d96a865a}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{for}(Int \_j=0; \_j<vec.size(); \_j++)\(\backslash\)
+    \{\(\backslash\)
+        pmsg(LEV\_DBG,stdout,\textcolor{stringliteral}{"%.4f "},(\textcolor{keywordtype}{double})vec[\_j]);\(\backslash\)
+    \}\(\backslash\)
+    pmsg(LEV\_DBG,stdout,\textcolor{stringliteral}{"\(\backslash\)n"});
+\end{DoxyCode}
+\hypertarget{pgpr__util_8h_a31ced2132f69ef00cd11ce2476869ded}{\index{pgpr\-\_\-util.\-h@{pgpr\-\_\-util.\-h}!pvec\-\_\-r@{pvec\-\_\-r}}
+\index{pvec\-\_\-r@{pvec\-\_\-r}!pgpr_util.h@{pgpr\-\_\-util.\-h}}
+\subsubsection[{pvec\-\_\-r}]{\setlength{\rightskip}{0pt plus 5cm}\#define pvec\-\_\-r(
+\begin{DoxyParamCaption}
+\item[{}]{vec, }
+\item[{}]{vsize}
+\end{DoxyParamCaption}
+)}}\label{pgpr__util_8h_a31ced2132f69ef00cd11ce2476869ded}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{for}(Int \_j=0; \_j<vsize; \_j++)\(\backslash\)
+    \{\(\backslash\)
+        pmsg(LEV\_DBG,stdout,\textcolor{stringliteral}{"%.4f "},(\textcolor{keywordtype}{double})vec[\_j]);\(\backslash\)
+    \}\(\backslash\)
+    pmsg(LEV\_DBG,stdout,\textcolor{stringliteral}{"\(\backslash\)n"});
+\end{DoxyCode}
+\hypertarget{pgpr__util_8h_a9a6ab0f9f8e25b0210247dd2a9682a32}{\index{pgpr\-\_\-util.\-h@{pgpr\-\_\-util.\-h}!pvec\-\_\-s@{pvec\-\_\-s}}
+\index{pvec\-\_\-s@{pvec\-\_\-s}!pgpr_util.h@{pgpr\-\_\-util.\-h}}
+\subsubsection[{pvec\-\_\-s}]{\setlength{\rightskip}{0pt plus 5cm}\#define pvec\-\_\-s(
+\begin{DoxyParamCaption}
+\item[{}]{\-\_\-s, }
+\item[{}]{vec}
+\end{DoxyParamCaption}
+)}}\label{pgpr__util_8h_a9a6ab0f9f8e25b0210247dd2a9682a32}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+pmsg(LEV\_DBG,stdout,\textcolor{stringliteral}{"%s:\(\backslash\)n"},\_s);\(\backslash\)
+    for(Int \_j=0; \_j<vec.size(); \_j++)\(\backslash\)
+    \{\(\backslash\)
+        pmsg(LEV\_DBG,stdout,\textcolor{stringliteral}{"%.4f "},(\textcolor{keywordtype}{double})vec[\_j]);\(\backslash\)
+    \}\(\backslash\)
+    pmsg(LEV\_DBG,stdout,\textcolor{stringliteral}{"\(\backslash\)n"});
+\end{DoxyCode}

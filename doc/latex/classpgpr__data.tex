@@ -1,0 +1,158 @@
+\hypertarget{classpgpr__data}{\section{pgpr\-\_\-data Class Reference}
+\label{classpgpr__data}\index{pgpr\-\_\-data@{pgpr\-\_\-data}}
+}
+
+
+This class provides functionalities of preparing train data, test set and support set.  
+
+
+
+
+{\ttfamily \#include $<$pgpr\-\_\-data.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpgpr__data_aa6879cea28bfba9c8a3fbd87df02a92c}{pgpr\-\_\-data} (\hyperlink{classpgpr__parse}{pgpr\-\_\-parse} cfg, Int an, Int tn)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+Int \hyperlink{classpgpr__data_accb6162698eefa8c8826205a21ad18ab}{get\-Test\-Set} (Int tsize, \hyperlink{classpgpr__matrix}{Mdoub} \&test)
+\begin{DoxyCompactList}\small\item\em Get a random subset of data for testing purpose. \end{DoxyCompactList}\item 
+Int \hyperlink{classpgpr__data_aa826857a19458c7ec5dde1b9109f3b07}{get\-Train\-Set} (Int mode)
+\begin{DoxyCompactList}\small\item\em Get a set of training data. \end{DoxyCompactList}\item 
+Int \hyperlink{classpgpr__data_a569dc41fa124c739d28d05d56874d4c4}{get\-Random\-Blk} ()
+\begin{DoxyCompactList}\small\item\em Get a set of training data based on a simple clustering scheme. \end{DoxyCompactList}\item 
+Int \hyperlink{classpgpr__data_a1b0b0b000a221c160339ea4207910753}{get\-Random\-Walk} ()
+\begin{DoxyCompactList}\small\item\em Get a set of training data based on random walk. Note that, it is applicable only if the domain contains topology information. \end{DoxyCompactList}\item 
+Int \hyperlink{classpgpr__data_accef69857141cfa9e7b415edab6e2899}{sel\-Max\-Var} (\hyperlink{classpgpr__matrix}{Mdoub} dset, Int dnum, Int anum, \hyperlink{classpgpr__matrix}{Mdoub} \&aset)
+\begin{DoxyCompactList}\small\item\em Actively select an informative subset of points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classpgpr__data_a5b77dc4896f54924681a133309dc5206}{\hyperlink{classpgpr__domain}{pgpr\-\_\-domain} $\ast$ \hyperlink{classpgpr__data_a5b77dc4896f54924681a133309dc5206}{domain}}\label{classpgpr__data_a5b77dc4896f54924681a133309dc5206}
+
+\begin{DoxyCompactList}\small\item\em Pointer to a domain. \end{DoxyCompactList}\item 
+\hypertarget{classpgpr__data_a839a49ca4d5de7973463e6203a7e807f}{\hyperlink{classpgpr__matrix}{Mint} \hyperlink{classpgpr__data_a839a49ca4d5de7973463e6203a7e807f}{m\-\_\-sample}}\label{classpgpr__data_a839a49ca4d5de7973463e6203a7e807f}
+
+\begin{DoxyCompactList}\small\item\em Matrix of indices used as training data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides functionalities of preparing train data, test set and support set. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpgpr__data_aa6879cea28bfba9c8a3fbd87df02a92c}{\index{pgpr\-\_\-data@{pgpr\-\_\-data}!pgpr\-\_\-data@{pgpr\-\_\-data}}
+\index{pgpr\-\_\-data@{pgpr\-\_\-data}!pgpr_data@{pgpr\-\_\-data}}
+\subsubsection[{pgpr\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}pgpr\-\_\-data\-::pgpr\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{{\bf pgpr\-\_\-parse}}]{cfg, }
+\item[{Int}]{an, }
+\item[{Int}]{tn}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classpgpr__data_aa6879cea28bfba9c8a3fbd87df02a92c}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cfg} & Configure of domain \\
+\hline
+\mbox{\tt in}  & {\em an} & Number of blocks \\
+\hline
+\mbox{\tt in}  & {\em tn} & Number of samples that are used for training \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpgpr__data_a569dc41fa124c739d28d05d56874d4c4}{\index{pgpr\-\_\-data@{pgpr\-\_\-data}!get\-Random\-Blk@{get\-Random\-Blk}}
+\index{get\-Random\-Blk@{get\-Random\-Blk}!pgpr_data@{pgpr\-\_\-data}}
+\subsubsection[{get\-Random\-Blk}]{\setlength{\rightskip}{0pt plus 5cm}Int pgpr\-\_\-data\-::get\-Random\-Blk (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classpgpr__data_a569dc41fa124c739d28d05d56874d4c4}
+
+
+Get a set of training data based on a simple clustering scheme. 
+
+This function follows steps (see Definition 5, remark 2)\-: 1) randomly select a set of K central points; 2) randomly select an unobserved point; 3) allocate it to the closest non-\/full bin; 4) loop until all bins are full. \begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]the training data is stored in m\-\_\-sample\-\_\-\{i,j\} where i is the i-\/th observation and j is the j-\/th bin. I am considering move m\-\_\-sample out of member attribute \end{DoxyRefDesc}
+\hypertarget{classpgpr__data_a1b0b0b000a221c160339ea4207910753}{\index{pgpr\-\_\-data@{pgpr\-\_\-data}!get\-Random\-Walk@{get\-Random\-Walk}}
+\index{get\-Random\-Walk@{get\-Random\-Walk}!pgpr_data@{pgpr\-\_\-data}}
+\subsubsection[{get\-Random\-Walk}]{\setlength{\rightskip}{0pt plus 5cm}Int pgpr\-\_\-data\-::get\-Random\-Walk (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classpgpr__data_a1b0b0b000a221c160339ea4207910753}
+
+
+Get a set of training data based on random walk. Note that, it is applicable only if the domain contains topology information. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000002}{Todo}]the training data is stored in m\-\_\-sample\-\_\-\{i,j\} where i is the i-\/th observation and j is the j-\/th bin. I am considering move m\-\_\-sample out of member attribute \end{DoxyRefDesc}
+\hypertarget{classpgpr__data_accb6162698eefa8c8826205a21ad18ab}{\index{pgpr\-\_\-data@{pgpr\-\_\-data}!get\-Test\-Set@{get\-Test\-Set}}
+\index{get\-Test\-Set@{get\-Test\-Set}!pgpr_data@{pgpr\-\_\-data}}
+\subsubsection[{get\-Test\-Set}]{\setlength{\rightskip}{0pt plus 5cm}Int pgpr\-\_\-data\-::get\-Test\-Set (
+\begin{DoxyParamCaption}
+\item[{Int}]{tsize, }
+\item[{{\bf Mdoub} \&}]{test}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classpgpr__data_accb6162698eefa8c8826205a21ad18ab}
+
+
+Get a random subset of data for testing purpose. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tsize} & Size of test set \\
+\hline
+\mbox{\tt out}  & {\em test} & Set of data for test; each row represents a test point. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpgpr__data_aa826857a19458c7ec5dde1b9109f3b07}{\index{pgpr\-\_\-data@{pgpr\-\_\-data}!get\-Train\-Set@{get\-Train\-Set}}
+\index{get\-Train\-Set@{get\-Train\-Set}!pgpr_data@{pgpr\-\_\-data}}
+\subsubsection[{get\-Train\-Set}]{\setlength{\rightskip}{0pt plus 5cm}Int pgpr\-\_\-data\-::get\-Train\-Set (
+\begin{DoxyParamCaption}
+\item[{Int}]{mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classpgpr__data_aa826857a19458c7ec5dde1b9109f3b07}
+
+
+Get a set of training data. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mode} & different selection algorithms\-: A\-L\-G\-O1 -\/ Simple clustering algorithm; A\-L\-G\-O2 -\/ Random walk algorithm \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpgpr__data_accef69857141cfa9e7b415edab6e2899}{\index{pgpr\-\_\-data@{pgpr\-\_\-data}!sel\-Max\-Var@{sel\-Max\-Var}}
+\index{sel\-Max\-Var@{sel\-Max\-Var}!pgpr_data@{pgpr\-\_\-data}}
+\subsubsection[{sel\-Max\-Var}]{\setlength{\rightskip}{0pt plus 5cm}Int pgpr\-\_\-data\-::sel\-Max\-Var (
+\begin{DoxyParamCaption}
+\item[{{\bf Mdoub}}]{dset, }
+\item[{Int}]{dnum, }
+\item[{Int}]{anum, }
+\item[{{\bf Mdoub} \&}]{aset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classpgpr__data_accef69857141cfa9e7b415edab6e2899}
+
+
+Actively select an informative subset of points. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dset} & universal set of points \\
+\hline
+\mbox{\tt in}  & {\em dnum} & size of the universal set \\
+\hline
+\mbox{\tt in}  & {\em anum} & size of the subset to be selected \\
+\hline
+\mbox{\tt out}  & {\em aset} & the informative subset \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{pgpr__data_8h}{pgpr\-\_\-data.\-h}\end{DoxyCompactItemize}

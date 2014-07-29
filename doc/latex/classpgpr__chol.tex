@@ -1,0 +1,117 @@
+\hypertarget{classpgpr__chol}{\section{pgpr\-\_\-chol Class Reference}
+\label{classpgpr__chol}\index{pgpr\-\_\-chol@{pgpr\-\_\-chol}}
+}
+
+
+This class provides Cholesky factorization and some related useful functions such as inverse, log-\/determinant etc.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpgpr__chol_ade89a39def082f6de79df242a39fad67}{pgpr\-\_\-chol} (\hyperlink{classpgpr__matrix}{Mdoub} \&A)
+\begin{DoxyCompactList}\small\item\em The constructor does a Cholesky factorization. \end{DoxyCompactList}\item 
+void \hyperlink{classpgpr__chol_a567b23e2e93a85675de26550d5e4cb38}{solve} (\hyperlink{classpgpr__vector}{Vdoub} \&b, \hyperlink{classpgpr__vector}{Vdoub} \&x)
+\begin{DoxyCompactList}\small\item\em Solving A$\ast$ x = b using back substitution. \end{DoxyCompactList}\item 
+\hypertarget{classpgpr__chol_aba5c1f9eb3157d703a3d2c2ccba83493}{void {\bfseries elmult} (\hyperlink{classpgpr__vector}{Vdoub} \&y, \hyperlink{classpgpr__vector}{Vdoub} \&b)}\label{classpgpr__chol_aba5c1f9eb3157d703a3d2c2ccba83493}
+
+\item 
+void \hyperlink{classpgpr__chol_a365839254c16b047b2e36a7937b8593f}{elsolve} (\hyperlink{classpgpr__vector}{Vdoub} \&b, \hyperlink{classpgpr__vector}{Vdoub} \&y)
+\begin{DoxyCompactList}\small\item\em solving el $\ast$ y = b using back substitution. \end{DoxyCompactList}\item 
+void \hyperlink{classpgpr__chol_a8da419135a59362c31674091b0bfcf89}{inverse} (\hyperlink{classpgpr__matrix}{Mdoub} \&ainv)
+\begin{DoxyCompactList}\small\item\em Compute the inverse of a matrix. \end{DoxyCompactList}\item 
+Doub \hyperlink{classpgpr__chol_a72827b33f276569fa6c3c8f2af80c40e}{logdet} ()
+\begin{DoxyCompactList}\small\item\em Calculate the determinant of square matrix and retrun in log scale. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides Cholesky factorization and some related useful functions such as inverse, log-\/determinant etc. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpgpr__chol_ade89a39def082f6de79df242a39fad67}{\index{pgpr\-\_\-chol@{pgpr\-\_\-chol}!pgpr\-\_\-chol@{pgpr\-\_\-chol}}
+\index{pgpr\-\_\-chol@{pgpr\-\_\-chol}!pgpr_chol@{pgpr\-\_\-chol}}
+\subsubsection[{pgpr\-\_\-chol}]{\setlength{\rightskip}{0pt plus 5cm}pgpr\-\_\-chol\-::pgpr\-\_\-chol (
+\begin{DoxyParamCaption}
+\item[{{\bf Mdoub} \&}]{A}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classpgpr__chol_ade89a39def082f6de79df242a39fad67}
+
+
+The constructor does a Cholesky factorization. 
+
+The lower triangular factor is stored in el, and upper triangular factor is stored in elt.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the matrix that we want to do factorization \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpgpr__chol_a365839254c16b047b2e36a7937b8593f}{\index{pgpr\-\_\-chol@{pgpr\-\_\-chol}!elsolve@{elsolve}}
+\index{elsolve@{elsolve}!pgpr_chol@{pgpr\-\_\-chol}}
+\subsubsection[{elsolve}]{\setlength{\rightskip}{0pt plus 5cm}void pgpr\-\_\-chol\-::elsolve (
+\begin{DoxyParamCaption}
+\item[{{\bf Vdoub} \&}]{b, }
+\item[{{\bf Vdoub} \&}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classpgpr__chol_a365839254c16b047b2e36a7937b8593f}
+
+
+solving el $\ast$ y = b using back substitution. 
+
+b vector b = el $\ast$ y  y vector y stores the result \hypertarget{classpgpr__chol_a8da419135a59362c31674091b0bfcf89}{\index{pgpr\-\_\-chol@{pgpr\-\_\-chol}!inverse@{inverse}}
+\index{inverse@{inverse}!pgpr_chol@{pgpr\-\_\-chol}}
+\subsubsection[{inverse}]{\setlength{\rightskip}{0pt plus 5cm}void pgpr\-\_\-chol\-::inverse (
+\begin{DoxyParamCaption}
+\item[{{\bf Mdoub} \&}]{ainv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classpgpr__chol_a8da419135a59362c31674091b0bfcf89}
+
+
+Compute the inverse of a matrix. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em ainv} & inverted matrix \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpgpr__chol_a72827b33f276569fa6c3c8f2af80c40e}{\index{pgpr\-\_\-chol@{pgpr\-\_\-chol}!logdet@{logdet}}
+\index{logdet@{logdet}!pgpr_chol@{pgpr\-\_\-chol}}
+\subsubsection[{logdet}]{\setlength{\rightskip}{0pt plus 5cm}Doub pgpr\-\_\-chol\-::logdet (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classpgpr__chol_a72827b33f276569fa6c3c8f2af80c40e}
+
+
+Calculate the determinant of square matrix and retrun in log scale. 
+
+\begin{DoxyReturn}{Returns}
+Value of log-\/determinant 
+\end{DoxyReturn}
+\hypertarget{classpgpr__chol_a567b23e2e93a85675de26550d5e4cb38}{\index{pgpr\-\_\-chol@{pgpr\-\_\-chol}!solve@{solve}}
+\index{solve@{solve}!pgpr_chol@{pgpr\-\_\-chol}}
+\subsubsection[{solve}]{\setlength{\rightskip}{0pt plus 5cm}void pgpr\-\_\-chol\-::solve (
+\begin{DoxyParamCaption}
+\item[{{\bf Vdoub} \&}]{b, }
+\item[{{\bf Vdoub} \&}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classpgpr__chol_a567b23e2e93a85675de26550d5e4cb38}
+
+
+Solving A$\ast$ x = b using back substitution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & vector b = A $\ast$ x \\
+\hline
+{\em x} & vector which would store the result. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{pgpr__chol_8h}{pgpr\-\_\-chol.\-h}\end{DoxyCompactItemize}

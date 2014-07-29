@@ -1,0 +1,61 @@
+\subsection*{1. System requirements }
+
+Linux/\-Unix environment 64-\/bit processors G\-N\-U G\-C\-C (4.\-2.\-1 or above) M\-P\-I\-C\-H 3.\-0.\-4 (\href{http://www.mpich.org/}{\tt http\-://www.\-mpich.\-org/}); we also test in version 1.\-5
+
+\subsection*{2. Compile }
+
+To compile all the applications, enter the command\-: \begin{DoxyVerb}make all
+\end{DoxyVerb}
+
+
+All applications will be automatically generated in folder demo. In addition, it's also supported to compile each individual application. For example, to compile the application that prepares data (training data, test data etc.) for experiments
+
+make prep
+
+For the demonstration of different Gaussian process regression (G\-P\-R), you can use command \begin{DoxyVerb}make fgp
+\end{DoxyVerb}
+
+
+to compile the application that demonstrates full Gaussian process regression; \begin{DoxyVerb}make pitc 
+\end{DoxyVerb}
+
+
+to compile the application that demonstrates P\-I\-T\-C G\-P regression; \begin{DoxyVerb}make ppitc 
+\end{DoxyVerb}
+
+
+to compile the application that demonstrates parallel P\-I\-T\-C G\-P regression; \begin{DoxyVerb}make pic
+\end{DoxyVerb}
+
+
+to compile the application that demonstrates P\-I\-C G\-P regression; \begin{DoxyVerb}make ppic 
+\end{DoxyVerb}
+
+
+to compile the application that demonstrates P\-I\-C\-F-\/based G\-P regression. To clean the compilation environment, use the command\-: \begin{DoxyVerb}make clean
+\end{DoxyVerb}
+
+
+\subsection*{3. Demonstrations }
+
+A bash script can be used to run all applications, using command \begin{DoxyVerb}cd demo && bash bat_demo.sh
+\end{DoxyVerb}
+
+
+Basically, the script first prepares all necessary files (training data, test data, support set, and hyperparameter file) for experiments; Then, different G\-P\-R algorithms are run sequentially and output the results (i.\-e., incurred time, root mean square error (R\-M\-S\-E) and mean negative log probability (M\-N\-L\-P) ). For more information about the arguments of applications, please refer to the comments in the bash script.
+
+\subsection*{4. Documentation }
+
+To compile the documentation, the documentation generation tool doxygen (\href{http://www.doxygen.org}{\tt http\-://www.\-doxygen.\-org}) needs to be installed. Then, enter the home directory of our source code and run the command \begin{DoxyVerb}make doc
+\end{DoxyVerb}
+
+
+You can refer to the html version documentation by \begin{DoxyVerb}cd doc/html 
+\end{DoxyVerb}
+
+
+and use any browser to open index.\-html; In addition, the pdf version can be accessed by \begin{DoxyVerb}cd doc/latex && make
+\end{DoxyVerb}
+
+
+and use any pdf viewer to open refman.\-pdf. 

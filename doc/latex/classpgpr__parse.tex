@@ -1,0 +1,77 @@
+\hypertarget{classpgpr__parse}{\section{pgpr\-\_\-parse Class Reference}
+\label{classpgpr__parse}\index{pgpr\-\_\-parse@{pgpr\-\_\-parse}}
+}
+
+
+This class parses domain data files, configuration file and commandline of different applications.  
+
+
+
+
+{\ttfamily \#include $<$pgpr\-\_\-parse.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpgpr__parse_a3e6e01f2423c4a3a48dcd134d0a86385}{pgpr\-\_\-parse} (Int md, Int argc, Char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Construction function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classpgpr__parse_aa2dc5cb24f1a14e11db04e129c070697}{\hyperlink{classpgpr__vector}{Vdoub} \hyperlink{classpgpr__parse_aa2dc5cb24f1a14e11db04e129c070697}{v\-\_\-param}}\label{classpgpr__parse_aa2dc5cb24f1a14e11db04e129c070697}
+
+\begin{DoxyCompactList}\small\item\em Vector of parameters loaded from cfg file. \end{DoxyCompactList}\item 
+\hypertarget{classpgpr__parse_afca0013fbaf5205abef333d22f0bcdf4}{\hyperlink{classpgpr__vector}{Vdoub} \hyperlink{classpgpr__parse_afca0013fbaf5205abef333d22f0bcdf4}{v\-\_\-hyp}}\label{classpgpr__parse_afca0013fbaf5205abef333d22f0bcdf4}
+
+\begin{DoxyCompactList}\small\item\em Vector of hyperparameters loaded from cfg file. \end{DoxyCompactList}\item 
+\hypertarget{classpgpr__parse_ad68cc51bfd6c7c8193039f51b641e01d}{\hyperlink{classpgpr__matrix}{Mdoub} \hyperlink{classpgpr__parse_ad68cc51bfd6c7c8193039f51b641e01d}{m\-\_\-xyz}}\label{classpgpr__parse_ad68cc51bfd6c7c8193039f51b641e01d}
+
+\begin{DoxyCompactList}\small\item\em Matrix storing domain data where no. of rows indicates the size of domain and no. of columns is the dimension of inputs and outputs. \end{DoxyCompactList}\item 
+\hypertarget{classpgpr__parse_a24a21542be9a07d290aed66f90997031}{Int \hyperlink{classpgpr__parse_a24a21542be9a07d290aed66f90997031}{in\-\_\-dim}}\label{classpgpr__parse_a24a21542be9a07d290aed66f90997031}
+
+\begin{DoxyCompactList}\small\item\em Dimension of inputs. \end{DoxyCompactList}\item 
+\hypertarget{classpgpr__parse_ae1fab280bf9c33d950d41f3c962fe8f0}{Int \hyperlink{classpgpr__parse_ae1fab280bf9c33d950d41f3c962fe8f0}{out\-\_\-dim}}\label{classpgpr__parse_ae1fab280bf9c33d950d41f3c962fe8f0}
+
+\begin{DoxyCompactList}\small\item\em Dimension of outputs. \end{DoxyCompactList}\item 
+\hypertarget{classpgpr__parse_a1e1b0be13a510fd547620a8971874407}{\hyperlink{classpgpr__matrix}{Mint} \hyperlink{classpgpr__parse_a1e1b0be13a510fd547620a8971874407}{m\-\_\-connect}}\label{classpgpr__parse_a1e1b0be13a510fd547620a8971874407}
+
+\begin{DoxyCompactList}\small\item\em Connectivity of the domain data\-: each row stores the indices of a set of data points that connects to the corresponding data points. \end{DoxyCompactList}\item 
+\hypertarget{classpgpr__parse_ace1bdb63deaf2a5c680613c33cfc625e}{\hyperlink{structt__command__demo}{t\-\_\-command\-\_\-demo} \hyperlink{classpgpr__parse_ace1bdb63deaf2a5c680613c33cfc625e}{param\-\_\-demo}}\label{classpgpr__parse_ace1bdb63deaf2a5c680613c33cfc625e}
+
+\begin{DoxyCompactList}\small\item\em Information extracted from the commandline of a demo application. \end{DoxyCompactList}\item 
+\hypertarget{classpgpr__parse_a86c109ef49507a1be375201d0ac4af8e}{\hyperlink{structt__command__prep}{t\-\_\-command\-\_\-prep} \hyperlink{classpgpr__parse_a86c109ef49507a1be375201d0ac4af8e}{param\-\_\-prep}}\label{classpgpr__parse_a86c109ef49507a1be375201d0ac4af8e}
+
+\begin{DoxyCompactList}\small\item\em Information extracted from the commandline of experimental data preparing application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class parses domain data files, configuration file and commandline of different applications. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpgpr__parse_a3e6e01f2423c4a3a48dcd134d0a86385}{\index{pgpr\-\_\-parse@{pgpr\-\_\-parse}!pgpr\-\_\-parse@{pgpr\-\_\-parse}}
+\index{pgpr\-\_\-parse@{pgpr\-\_\-parse}!pgpr_parse@{pgpr\-\_\-parse}}
+\subsubsection[{pgpr\-\_\-parse}]{\setlength{\rightskip}{0pt plus 5cm}pgpr\-\_\-parse\-::pgpr\-\_\-parse (
+\begin{DoxyParamCaption}
+\item[{Int}]{md, }
+\item[{Int}]{argc, }
+\item[{Char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classpgpr__parse_a3e6e01f2423c4a3a48dcd134d0a86385}
+
+
+Construction function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em md} & Different applications\-: C\-F\-G\-D\-E\-M\-O -\/ demo application; C\-F\-G\-P\-R\-E\-P -\/ data preparing application \\
+\hline
+\mbox{\tt in}  & {\em argc} & count of arguments \\
+\hline
+\mbox{\tt in}  & {\em argv} & an array of pointers to the list of arguments \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{pgpr__parse_8h}{pgpr\-\_\-parse.\-h}\end{DoxyCompactItemize}

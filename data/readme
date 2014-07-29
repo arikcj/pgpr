@@ -1,0 +1,8 @@
+1. format of cfg file
+dom: domain size, dimension, maximum neighbors, number of hyp
+hyp: square root of noise variance, length scale, square root of signal variance, mean
+
+2. format of dom file
+list of inputs    list of outputs		no. of connented data points		list of indices
+
+3. datasets

@@ -1,0 +1,168 @@
+\hypertarget{pgpr__type_8h}{\section{src/pgpr\-\_\-type.h File Reference}
+\label{pgpr__type_8h}\index{src/pgpr\-\_\-type.\-h@{src/pgpr\-\_\-type.\-h}}
+}
+
+
+This file provides important macros, templates, basic data types (e.\-g., vector, matrix).  
+
+
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include $<$complex$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$iomanip$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$limits$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$fcntl.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$ctype.\-h$>$}\\*
+{\ttfamily \#include $<$cfloat$>$}\\*
+{\ttfamily \#include $<$stdarg.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classpgpr__vector}{pgpr\-\_\-vector$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em Vector class. \end{DoxyCompactList}\item 
+class \hyperlink{classpgpr__matrix}{pgpr\-\_\-matrix$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em Matrix class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{pgpr__type_8h_a823b9cc14d4c72b7d81ea9754dfaeb59}{\#define {\bfseries S\-U\-C\-C}~0}\label{pgpr__type_8h_a823b9cc14d4c72b7d81ea9754dfaeb59}
+
+\item 
+\hypertarget{pgpr__type_8h_abb508ea8227673f419e9fe3a86c30d8e}{\#define {\bfseries F\-A\-I\-L}~-\/1}\label{pgpr__type_8h_abb508ea8227673f419e9fe3a86c30d8e}
+
+\item 
+\hypertarget{pgpr__type_8h_aa93f0eb578d23995850d61f7d61c55c1}{\#define {\bfseries F\-A\-L\-S\-E}~0}\label{pgpr__type_8h_aa93f0eb578d23995850d61f7d61c55c1}
+
+\item 
+\hypertarget{pgpr__type_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{\#define {\bfseries T\-R\-U\-E}~1}\label{pgpr__type_8h_aa8cecfc5c5c054d2875c03e77b7be15d}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{pgpr__type_8h_a7cc214a236ad3bb6ad435bdcf5262a3f}{typedef int {\bfseries Int}}\label{pgpr__type_8h_a7cc214a236ad3bb6ad435bdcf5262a3f}
+
+\item 
+\hypertarget{pgpr__type_8h_a4840c4503b7d10cea5e08416eb3716f1}{typedef unsigned int {\bfseries Uint}}\label{pgpr__type_8h_a4840c4503b7d10cea5e08416eb3716f1}
+
+\item 
+\hypertarget{pgpr__type_8h_af83bd1c87d82a7a9414b640d5911e674}{typedef long long int {\bfseries Llong}}\label{pgpr__type_8h_af83bd1c87d82a7a9414b640d5911e674}
+
+\item 
+\hypertarget{pgpr__type_8h_a45bbe8834e22a2a6cb84fefeff43c77e}{typedef unsigned long long int {\bfseries Ullong}}\label{pgpr__type_8h_a45bbe8834e22a2a6cb84fefeff43c77e}
+
+\item 
+\hypertarget{pgpr__type_8h_a7942e32f6409fbd1fd347a8c23ef725e}{typedef char {\bfseries Char}}\label{pgpr__type_8h_a7942e32f6409fbd1fd347a8c23ef725e}
+
+\item 
+\hypertarget{pgpr__type_8h_a5c3641e5dfe71f67a3c3a72026a24af2}{typedef unsigned char {\bfseries Uchar}}\label{pgpr__type_8h_a5c3641e5dfe71f67a3c3a72026a24af2}
+
+\item 
+\hypertarget{pgpr__type_8h_ad34040bfabf8ed3ead2d0d01078f27a9}{typedef double {\bfseries Doub}}\label{pgpr__type_8h_ad34040bfabf8ed3ead2d0d01078f27a9}
+
+\item 
+\hypertarget{pgpr__type_8h_a213aceede362abae357b651f973a4c86}{typedef long double {\bfseries Ldoub}}\label{pgpr__type_8h_a213aceede362abae357b651f973a4c86}
+
+\item 
+\hypertarget{pgpr__type_8h_a76a8b016e5ad61faf9062cc387df5016}{typedef bool {\bfseries Bool}}\label{pgpr__type_8h_a76a8b016e5ad61faf9062cc387df5016}
+
+\item 
+\hypertarget{pgpr__type_8h_ab180c427d4ca42499067c137844117b3}{typedef const \hyperlink{classpgpr__vector}{pgpr\-\_\-vector}$<$ Bool $>$ {\bfseries Vbool\-\_\-\-I}}\label{pgpr__type_8h_ab180c427d4ca42499067c137844117b3}
+
+\item 
+\hypertarget{pgpr__type_8h_ab209d2ff17d962c5a3becfaeefb09ba4}{typedef \hyperlink{classpgpr__vector}{pgpr\-\_\-vector}$<$ Bool $>$ {\bfseries Vbool}}\label{pgpr__type_8h_ab209d2ff17d962c5a3becfaeefb09ba4}
+
+\item 
+\hypertarget{pgpr__type_8h_a94e83e97e2493e1b6e88878a6a6dfb51}{typedef \hyperlink{classpgpr__vector}{pgpr\-\_\-vector}$<$ Bool $>$ {\bfseries Vbool\-\_\-\-O}}\label{pgpr__type_8h_a94e83e97e2493e1b6e88878a6a6dfb51}
+
+\item 
+\hypertarget{pgpr__type_8h_af32084549d81fc973e1133e52f97054a}{typedef \hyperlink{classpgpr__vector}{pgpr\-\_\-vector}$<$ Bool $>$ {\bfseries Vbool\-\_\-\-I\-O}}\label{pgpr__type_8h_af32084549d81fc973e1133e52f97054a}
+
+\item 
+\hypertarget{pgpr__type_8h_a84f1a164166f216a9bed0238e46f601b}{typedef const \hyperlink{classpgpr__vector}{pgpr\-\_\-vector}$<$ Int $>$ {\bfseries Vint\-\_\-\-I}}\label{pgpr__type_8h_a84f1a164166f216a9bed0238e46f601b}
+
+\item 
+\hypertarget{pgpr__type_8h_a6fe2784d587ba65e402e7b543e5757d2}{typedef \hyperlink{classpgpr__vector}{pgpr\-\_\-vector}$<$ Int $>$ {\bfseries Vint}}\label{pgpr__type_8h_a6fe2784d587ba65e402e7b543e5757d2}
+
+\item 
+\hypertarget{pgpr__type_8h_aaa3dd0d654a8d04286aef1e0f3ea1a8e}{typedef \hyperlink{classpgpr__vector}{pgpr\-\_\-vector}$<$ Int $>$ {\bfseries Vint\-\_\-\-O}}\label{pgpr__type_8h_aaa3dd0d654a8d04286aef1e0f3ea1a8e}
+
+\item 
+\hypertarget{pgpr__type_8h_a1a6d6772db198f53bdfa4f1a22bc886c}{typedef \hyperlink{classpgpr__vector}{pgpr\-\_\-vector}$<$ Int $>$ {\bfseries Vint\-\_\-\-I\-O}}\label{pgpr__type_8h_a1a6d6772db198f53bdfa4f1a22bc886c}
+
+\item 
+\hypertarget{pgpr__type_8h_a2246ae5ead359bfccfb024cc759915ee}{typedef const \hyperlink{classpgpr__vector}{pgpr\-\_\-vector}$<$ Uint $>$ {\bfseries Vuint\-\_\-\-I}}\label{pgpr__type_8h_a2246ae5ead359bfccfb024cc759915ee}
+
+\item 
+\hypertarget{pgpr__type_8h_a01612cd9f33a045ba827e47476f17a6e}{typedef \hyperlink{classpgpr__vector}{pgpr\-\_\-vector}$<$ Uint $>$ {\bfseries Vuint}}\label{pgpr__type_8h_a01612cd9f33a045ba827e47476f17a6e}
+
+\item 
+\hypertarget{pgpr__type_8h_a6f48200d3fcce23d3baf32f1adde31b0}{typedef \hyperlink{classpgpr__vector}{pgpr\-\_\-vector}$<$ Uint $>$ {\bfseries Vuint\-\_\-\-O}}\label{pgpr__type_8h_a6f48200d3fcce23d3baf32f1adde31b0}
+
+\item 
+\hypertarget{pgpr__type_8h_a310d9b57ded14acd2d60df6102af965d}{typedef \hyperlink{classpgpr__vector}{pgpr\-\_\-vector}$<$ Uint $>$ {\bfseries Vuint\-\_\-\-I\-O}}\label{pgpr__type_8h_a310d9b57ded14acd2d60df6102af965d}
+
+\item 
+\hypertarget{pgpr__type_8h_abbd4049c83d71dd1a35c4f60a8b39106}{typedef const \hyperlink{classpgpr__vector}{pgpr\-\_\-vector}$<$ Doub $>$ {\bfseries Vdoub\-\_\-\-I}}\label{pgpr__type_8h_abbd4049c83d71dd1a35c4f60a8b39106}
+
+\item 
+\hypertarget{pgpr__type_8h_ad09d770761e318137de271cc59a65858}{typedef \hyperlink{classpgpr__vector}{pgpr\-\_\-vector}$<$ Doub $>$ {\bfseries Vdoub}}\label{pgpr__type_8h_ad09d770761e318137de271cc59a65858}
+
+\item 
+\hypertarget{pgpr__type_8h_af1053ce9adabf48705b46a78c0dc14ef}{typedef \hyperlink{classpgpr__vector}{pgpr\-\_\-vector}$<$ Doub $>$ {\bfseries Vdoub\-\_\-\-O}}\label{pgpr__type_8h_af1053ce9adabf48705b46a78c0dc14ef}
+
+\item 
+\hypertarget{pgpr__type_8h_a5f80d55402e35b2f72d7d5bb9ff7efbb}{typedef \hyperlink{classpgpr__vector}{pgpr\-\_\-vector}$<$ Doub $>$ {\bfseries Vdoub\-\_\-\-I\-O}}\label{pgpr__type_8h_a5f80d55402e35b2f72d7d5bb9ff7efbb}
+
+\item 
+\hypertarget{pgpr__type_8h_a94bc24a153bd29fae89e36e9c263d4e2}{typedef const \hyperlink{classpgpr__matrix}{pgpr\-\_\-matrix}$<$ Int $>$ {\bfseries Mint\-\_\-\-I}}\label{pgpr__type_8h_a94bc24a153bd29fae89e36e9c263d4e2}
+
+\item 
+\hypertarget{pgpr__type_8h_a8ea2d7dc650692ec2860e1294398c2a6}{typedef \hyperlink{classpgpr__matrix}{pgpr\-\_\-matrix}$<$ Int $>$ {\bfseries Mint}}\label{pgpr__type_8h_a8ea2d7dc650692ec2860e1294398c2a6}
+
+\item 
+\hypertarget{pgpr__type_8h_aaf91f883a71dbaed9fc2b177197bc9a2}{typedef \hyperlink{classpgpr__matrix}{pgpr\-\_\-matrix}$<$ Int $>$ {\bfseries Mint\-\_\-\-O}}\label{pgpr__type_8h_aaf91f883a71dbaed9fc2b177197bc9a2}
+
+\item 
+\hypertarget{pgpr__type_8h_aa910d0246630144e20e825d4cf803af3}{typedef \hyperlink{classpgpr__matrix}{pgpr\-\_\-matrix}$<$ Int $>$ {\bfseries Mint\-\_\-\-I\-O}}\label{pgpr__type_8h_aa910d0246630144e20e825d4cf803af3}
+
+\item 
+\hypertarget{pgpr__type_8h_aa2d0f2916811ce81fe482769bae0e9a4}{typedef const \hyperlink{classpgpr__matrix}{pgpr\-\_\-matrix}$<$ Uint $>$ {\bfseries Muint\-\_\-\-I}}\label{pgpr__type_8h_aa2d0f2916811ce81fe482769bae0e9a4}
+
+\item 
+\hypertarget{pgpr__type_8h_ade42b38739bd2a8bfb1af09638f68909}{typedef \hyperlink{classpgpr__matrix}{pgpr\-\_\-matrix}$<$ Uint $>$ {\bfseries Muint}}\label{pgpr__type_8h_ade42b38739bd2a8bfb1af09638f68909}
+
+\item 
+\hypertarget{pgpr__type_8h_aee450af5a461e0ac5c1941b88ee2f328}{typedef \hyperlink{classpgpr__matrix}{pgpr\-\_\-matrix}$<$ Uint $>$ {\bfseries Muint\-\_\-\-O}}\label{pgpr__type_8h_aee450af5a461e0ac5c1941b88ee2f328}
+
+\item 
+\hypertarget{pgpr__type_8h_a276d9abe7f87e68349a5aea3fcc41bbf}{typedef \hyperlink{classpgpr__matrix}{pgpr\-\_\-matrix}$<$ Uint $>$ {\bfseries Muint\-\_\-\-I\-O}}\label{pgpr__type_8h_a276d9abe7f87e68349a5aea3fcc41bbf}
+
+\item 
+\hypertarget{pgpr__type_8h_a44fa2372602f30ead02afd556d186f67}{typedef const \hyperlink{classpgpr__matrix}{pgpr\-\_\-matrix}$<$ Doub $>$ {\bfseries Mdoub\-\_\-\-I}}\label{pgpr__type_8h_a44fa2372602f30ead02afd556d186f67}
+
+\item 
+\hypertarget{pgpr__type_8h_a3f2782cc5d5cfab307700df6cd79995d}{typedef \hyperlink{classpgpr__matrix}{pgpr\-\_\-matrix}$<$ Doub $>$ {\bfseries Mdoub}}\label{pgpr__type_8h_a3f2782cc5d5cfab307700df6cd79995d}
+
+\item 
+\hypertarget{pgpr__type_8h_ad83c70cc6e645be4da288d7d2b7f3c61}{typedef \hyperlink{classpgpr__matrix}{pgpr\-\_\-matrix}$<$ Doub $>$ {\bfseries Mdoub\-\_\-\-O}}\label{pgpr__type_8h_ad83c70cc6e645be4da288d7d2b7f3c61}
+
+\item 
+\hypertarget{pgpr__type_8h_ad31bc97170fa756e5861de979461e2eb}{typedef \hyperlink{classpgpr__matrix}{pgpr\-\_\-matrix}$<$ Doub $>$ {\bfseries Mdoub\-\_\-\-I\-O}}\label{pgpr__type_8h_ad31bc97170fa756e5861de979461e2eb}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file provides important macros, templates, basic data types (e.\-g., vector, matrix). \begin{DoxyAuthor}{Author}
+C\-H\-E\-N jie, \href{mailto:arik.cj@gmail.com}{\tt arik.\-cj@gmail.\-com}
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}

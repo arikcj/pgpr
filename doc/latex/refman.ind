@@ -1,0 +1,247 @@
+\begin{theindex}
+
+  \item {dim}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}cov}, 
+		\hyperpage{11}
+
+  \indexspace
+
+  \item {elsolve}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}chol}, 
+		\hyperpage{10}
+  \item {end}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}timer}, 
+		\hyperpage{19}
+
+  \indexspace
+
+  \item {get\discretionary {-}{}{}Attr}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}domain}, 
+		\hyperpage{15}
+  \item {get\discretionary {-}{}{}Dist}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}domain}, 
+		\hyperpage{15}
+  \item {get\discretionary {-}{}{}Neighbour}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}domain}, 
+		\hyperpage{15}
+  \item {get\discretionary {-}{}{}Random\discretionary {-}{}{}Blk}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}data}, 
+		\hyperpage{13}
+  \item {get\discretionary {-}{}{}Random\discretionary {-}{}{}Walk}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}data}, 
+		\hyperpage{13}
+  \item {get\discretionary {-}{}{}St}
+    \subitem {t\discretionary {-}{}{}\_\discretionary {-}{}{}state}, 
+		\hyperpage{23}
+  \item {get\discretionary {-}{}{}Test\discretionary {-}{}{}Set}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}data}, 
+		\hyperpage{13}
+  \item {get\discretionary {-}{}{}Train\discretionary {-}{}{}Set}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}data}, 
+		\hyperpage{13}
+
+  \indexspace
+
+  \item {init}
+    \subitem {t\discretionary {-}{}{}\_\discretionary {-}{}{}state}, 
+		\hyperpage{23}
+  \item {inverse}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}chol}, 
+		\hyperpage{10}
+
+  \indexspace
+
+  \item {logdet}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}chol}, 
+		\hyperpage{10}
+  \item {lsc}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}cov}, 
+		\hyperpage{11}
+
+  \indexspace
+
+  \item {mu}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}cov}, 
+		\hyperpage{11}
+
+  \indexspace
+
+  \item {nos}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}cov}, 
+		\hyperpage{11}
+
+  \indexspace
+
+  \item {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}chol}, 
+		\hyperpage{9}
+    \subitem {elsolve}, \hyperpage{10}
+    \subitem {inverse}, \hyperpage{10}
+    \subitem {logdet}, \hyperpage{10}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}chol}, 
+		\hyperpage{9}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}chol}, 
+		\hyperpage{9}
+    \subitem {solve}, \hyperpage{10}
+  \item {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}cluster}, 
+		\hyperpage{10}
+  \item {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}cov}, 
+		\hyperpage{11}
+    \subitem {dim}, \hyperpage{11}
+    \subitem {lsc}, \hyperpage{11}
+    \subitem {mu}, \hyperpage{11}
+    \subitem {nos}, \hyperpage{11}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}cov}, 
+		\hyperpage{11}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}cov}, 
+		\hyperpage{11}
+    \subitem {sig}, \hyperpage{12}
+  \item {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}data}, 
+		\hyperpage{12}
+    \subitem {get\discretionary {-}{}{}Random\discretionary {-}{}{}Blk}, 
+		\hyperpage{13}
+    \subitem {get\discretionary {-}{}{}Random\discretionary {-}{}{}Walk}, 
+		\hyperpage{13}
+    \subitem {get\discretionary {-}{}{}Test\discretionary {-}{}{}Set}, 
+		\hyperpage{13}
+    \subitem {get\discretionary {-}{}{}Train\discretionary {-}{}{}Set}, 
+		\hyperpage{13}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}data}, 
+		\hyperpage{12}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}data}, 
+		\hyperpage{12}
+    \subitem {sel\discretionary {-}{}{}Max\discretionary {-}{}{}Var}, 
+		\hyperpage{13}
+  \item {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}domain}, 
+		\hyperpage{14}
+    \subitem {get\discretionary {-}{}{}Attr}, \hyperpage{15}
+    \subitem {get\discretionary {-}{}{}Dist}, \hyperpage{15}
+    \subitem {get\discretionary {-}{}{}Neighbour}, \hyperpage{15}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}domain}, 
+		\hyperpage{14}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}domain}, 
+		\hyperpage{14}
+    \subitem {sel\discretionary {-}{}{}Rand}, \hyperpage{15}
+  \item {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}fgp}, 
+		\hyperpage{16}
+  \item {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}matrix$<$ T $>$}, 
+		\hyperpage{16}
+  \item {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}parse}, 
+		\hyperpage{17}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}parse}, 
+		\hyperpage{17}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}parse}, 
+		\hyperpage{17}
+  \item {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}pic}, 
+		\hyperpage{18}
+  \item {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}pitc}, 
+		\hyperpage{18}
+  \item {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}ppic}, 
+		\hyperpage{18}
+  \item {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}ppitc}, 
+		\hyperpage{19}
+  \item {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}timer}, 
+		\hyperpage{19}
+    \subitem {end}, \hyperpage{19}
+  \item {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}util.\discretionary {-}{}{}h}
+    \subitem {pmat}, \hyperpage{33}
+    \subitem {pmat\discretionary {-}{}{}\_\discretionary {-}{}{}pos}, 
+		\hyperpage{33}
+    \subitem {pmat\discretionary {-}{}{}\_\discretionary {-}{}{}r}, 
+		\hyperpage{33}
+    \subitem {pmat\discretionary {-}{}{}\_\discretionary {-}{}{}s}, 
+		\hyperpage{33}
+    \subitem {pvec}, \hyperpage{34}
+    \subitem {pvec\discretionary {-}{}{}\_\discretionary {-}{}{}r}, 
+		\hyperpage{34}
+    \subitem {pvec\discretionary {-}{}{}\_\discretionary {-}{}{}s}, 
+		\hyperpage{34}
+  \item {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}vector$<$ T $>$}, 
+		\hyperpage{20}
+  \item {pmat}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}util.\discretionary {-}{}{}h}, 
+		\hyperpage{33}
+  \item {pmat\discretionary {-}{}{}\_\discretionary {-}{}{}pos}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}util.\discretionary {-}{}{}h}, 
+		\hyperpage{33}
+  \item {pmat\discretionary {-}{}{}\_\discretionary {-}{}{}r}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}util.\discretionary {-}{}{}h}, 
+		\hyperpage{33}
+  \item {pmat\discretionary {-}{}{}\_\discretionary {-}{}{}s}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}util.\discretionary {-}{}{}h}, 
+		\hyperpage{33}
+  \item {pvec}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}util.\discretionary {-}{}{}h}, 
+		\hyperpage{34}
+  \item {pvec\discretionary {-}{}{}\_\discretionary {-}{}{}r}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}util.\discretionary {-}{}{}h}, 
+		\hyperpage{34}
+  \item {pvec\discretionary {-}{}{}\_\discretionary {-}{}{}s}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}util.\discretionary {-}{}{}h}, 
+		\hyperpage{34}
+
+  \indexspace
+
+  \item {sel\discretionary {-}{}{}Max\discretionary {-}{}{}Var}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}data}, 
+		\hyperpage{13}
+  \item {sel\discretionary {-}{}{}Rand}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}domain}, 
+		\hyperpage{15}
+  \item {sig}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}cov}, 
+		\hyperpage{12}
+  \item {solve}
+    \subitem {pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}chol}, 
+		\hyperpage{10}
+  \item {src/pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}chol.\discretionary {-}{}{}h}, 
+		\hyperpage{25}
+  \item {src/pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}cluster.\discretionary {-}{}{}h}, 
+		\hyperpage{25}
+  \item {src/pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}cov.\discretionary {-}{}{}h}, 
+		\hyperpage{26}
+  \item {src/pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}data.\discretionary {-}{}{}h}, 
+		\hyperpage{26}
+  \item {src/pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}fgp.\discretionary {-}{}{}h}, 
+		\hyperpage{27}
+  \item {src/pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}parse.\discretionary {-}{}{}h}, 
+		\hyperpage{27}
+  \item {src/pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}pic.\discretionary {-}{}{}h}, 
+		\hyperpage{28}
+  \item {src/pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}pitc.\discretionary {-}{}{}h}, 
+		\hyperpage{28}
+  \item {src/pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}ppic.\discretionary {-}{}{}h}, 
+		\hyperpage{29}
+  \item {src/pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}ppitc.\discretionary {-}{}{}h}, 
+		\hyperpage{29}
+  \item {src/pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}type.\discretionary {-}{}{}h}, 
+		\hyperpage{30}
+  \item {src/pgpr\discretionary {-}{}{}\_\discretionary {-}{}{}util.\discretionary {-}{}{}h}, 
+		\hyperpage{31}
+
+  \indexspace
+
+  \item {t\discretionary {-}{}{}\_\discretionary {-}{}{}command\discretionary {-}{}{}\_\discretionary {-}{}{}demo}, 
+		\hyperpage{20}
+  \item {t\discretionary {-}{}{}\_\discretionary {-}{}{}command\discretionary {-}{}{}\_\discretionary {-}{}{}prep}, 
+		\hyperpage{21}
+  \item {t\discretionary {-}{}{}\_\discretionary {-}{}{}global\discretionary {-}{}{}\_\discretionary {-}{}{}summary}, 
+		\hyperpage{22}
+  \item {t\discretionary {-}{}{}\_\discretionary {-}{}{}local\discretionary {-}{}{}\_\discretionary {-}{}{}summary}, 
+		\hyperpage{22}
+  \item {t\discretionary {-}{}{}\_\discretionary {-}{}{}state}, 
+		\hyperpage{22}
+    \subitem {get\discretionary {-}{}{}St}, \hyperpage{23}
+    \subitem {init}, \hyperpage{23}
+    \subitem {t\discretionary {-}{}{}\_\discretionary {-}{}{}state}, 
+		\hyperpage{23}
+    \subitem {t\discretionary {-}{}{}\_\discretionary {-}{}{}state}, 
+		\hyperpage{23}
+    \subitem {up\discretionary {-}{}{}St}, \hyperpage{24}
+
+  \indexspace
+
+  \item {up\discretionary {-}{}{}St}
+    \subitem {t\discretionary {-}{}{}\_\discretionary {-}{}{}state}, 
+		\hyperpage{24}
+
+\end{theindex}
