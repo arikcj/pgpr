@@ -34,7 +34,7 @@
  * prepares the experimental data.
  **/
 struct t_command_prep {
-	/// Running mode of program
+    /// Running mode of program
   Int mode;			
 	/// Random seed
   Int seed;				
@@ -66,8 +66,10 @@ struct t_command_demo {
   Int mode;								
 	/// Number of data blocks (used by PITC/pPITC/PIC/pPIC)
   Int blocks;
-	/// Size of the reduced rank (used by PICF-based GP)
-  Int rank;							
+	/// Size of the reduced rank (used by PICF-based GP)	
+  Int rank;
+	/// The bandwidth (used by LMA/pLMA)
+  Int bandwidth;
 	/// File containing the results
   Char outf[NAMELEN];		
 	/// File containing the training data
@@ -302,6 +304,8 @@ the domain data used as test set> \n");
 				  param_demo.blocks = atoi(argv[++i]);
 			  } else if (!strcmp(argv[i] , "-rank")) {
 				  param_demo.rank = atoi(argv[++i]);
+			  } else if (!strcmp(argv[i] , "-bandwidth")) {
+				  param_demo.bandwidth = atoi(argv[++i]);
 			  } else {
 				  throw("Invalid arguments.\n");
 			  }

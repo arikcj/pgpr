@@ -17,12 +17,15 @@ var searchData=
   ['pgpr_5fmatrix',['pgpr_matrix',['../classpgpr__matrix.html',1,'']]],
   ['pgpr_5fmatrix_3c_20doub_20_3e',['pgpr_matrix&lt; Doub &gt;',['../classpgpr__matrix.html',1,'']]],
   ['pgpr_5fmatrix_3c_20int_20_3e',['pgpr_matrix&lt; Int &gt;',['../classpgpr__matrix.html',1,'']]],
+  ['pgpr_5fparallel',['pgpr_parallel',['../classpgpr__parallel.html',1,'']]],
   ['pgpr_5fparse',['pgpr_parse',['../classpgpr__parse.html',1,'pgpr_parse'],['../classpgpr__parse.html#a3e6e01f2423c4a3a48dcd134d0a86385',1,'pgpr_parse::pgpr_parse()']]],
   ['pgpr_5fparse_2eh',['pgpr_parse.h',['../pgpr__parse_8h.html',1,'']]],
   ['pgpr_5fpic',['pgpr_pic',['../classpgpr__pic.html',1,'']]],
   ['pgpr_5fpic_2eh',['pgpr_pic.h',['../pgpr__pic_8h.html',1,'']]],
   ['pgpr_5fpitc',['pgpr_pitc',['../classpgpr__pitc.html',1,'']]],
   ['pgpr_5fpitc_2eh',['pgpr_pitc.h',['../pgpr__pitc_8h.html',1,'']]],
+  ['pgpr_5fplma',['pgpr_plma',['../classpgpr__plma.html',1,'pgpr_plma'],['../classpgpr__plma.html#a91e6492d35e220988b68d49cfe851d61',1,'pgpr_plma::pgpr_plma()']]],
+  ['pgpr_5fplma_2eh',['pgpr_plma.h',['../pgpr__plma_8h.html',1,'']]],
   ['pgpr_5fppic',['pgpr_ppic',['../classpgpr__ppic.html',1,'']]],
   ['pgpr_5fppic_2eh',['pgpr_ppic.h',['../pgpr__ppic_8h.html',1,'']]],
   ['pgpr_5fppitc',['pgpr_ppitc',['../classpgpr__ppitc.html',1,'']]],
@@ -32,5 +35,6 @@ var searchData=
   ['pgpr_5futil_2eh',['pgpr_util.h',['../pgpr__util_8h.html',1,'']]],
   ['pgpr_5fvector',['pgpr_vector',['../classpgpr__vector.html',1,'']]],
   ['pgpr_5fvector_3c_20bool_20_3e',['pgpr_vector&lt; Bool &gt;',['../classpgpr__vector.html',1,'']]],
-  ['pgpr_5fvector_3c_20doub_20_3e',['pgpr_vector&lt; Doub &gt;',['../classpgpr__vector.html',1,'']]]
+  ['pgpr_5fvector_3c_20doub_20_3e',['pgpr_vector&lt; Doub &gt;',['../classpgpr__vector.html',1,'']]],
+  ['plma_5fregr',['plma_regr',['../classpgpr__plma.html#a52c35beeae947892f4f22145a1d91953',1,'pgpr_plma']]]
 ];

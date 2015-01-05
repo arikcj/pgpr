@@ -2,11 +2,15 @@ Introduction                         {#mainpage}
 ========================================================================
 1. System requirements 
 ------------------------------------------------------------------------
-Linux/Unix environment
+Linux/Unix/MacOS X environment
+
 64-bit processors
+
 GNU GCC (4.2.1 or above)
+
 MPICH 3.0.4 (http://www.mpich.org/); we also test in version 1.5
 
+Eigen (http://eigen.tuxfamily.org) for PLMA GP regression, Eigen (version 3.2.3) is already included under lib/
 
 2. Compile  
 ------------------------------------------------------------------------
@@ -42,7 +46,10 @@ regression;
 
 to compile the application that demonstrates PIC GP regression; 
 
-    make ppic 
+    make ppic
+	
+to compile the application that demonstrates PLMA GP regression, 
+  make plma
 
 to compile the application that demonstrates PICF-based GP regression.
 To clean the compilation environment, use the command:
@@ -63,7 +70,12 @@ Then, different GPR algorithms are run sequentially and output the
 results (i.e., incurred time, root mean square error (RMSE) and mean
     negative log probability (MNLP) ). For more information about the
 arguments of applications, please refer to the comments in the bash
-script. 
+script.
+
+Note when setting the bandwidth to be 0, PLMA would be the same as PPIC.
+The results may be different because of different clustering algorithms.
+When setting the bandwidth to be the maximum vale (blk - 1), PLMA would be
+equal to the FGP.
 
 
 4. Documentation

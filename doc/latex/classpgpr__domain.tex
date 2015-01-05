@@ -1,5 +1,5 @@
-\hypertarget{classpgpr__domain}{\section{pgpr\-\_\-domain Class Reference}
-\label{classpgpr__domain}\index{pgpr\-\_\-domain@{pgpr\-\_\-domain}}
+\hypertarget{classpgpr__domain}{\section{pgpr\+\_\+domain Class Reference}
+\label{classpgpr__domain}\index{pgpr\+\_\+domain@{pgpr\+\_\+domain}}
 }
 
 
@@ -8,20 +8,20 @@ This class stores the domain data in a matrix manner.
 
 
 
-{\ttfamily \#include $<$pgpr\-\_\-data.\-h$>$}
+{\ttfamily \#include $<$pgpr\+\_\+data.\+h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classpgpr__domain_ac527084df0c657962f29a554da0b3eea}{pgpr\-\_\-domain} (\hyperlink{classpgpr__matrix}{Mint} n, \hyperlink{classpgpr__matrix}{Mdoub} a)
+\hyperlink{classpgpr__domain_ac527084df0c657962f29a554da0b3eea}{pgpr\+\_\+domain} (\hyperlink{classpgpr__matrix}{Mint} n, \hyperlink{classpgpr__matrix}{Mdoub} a)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-Doub \hyperlink{classpgpr__domain_ac24189f56e27aad49dee703f5a58cc9b}{get\-Dist} (Int ci, Int cj)
+Doub \hyperlink{classpgpr__domain_ac24189f56e27aad49dee703f5a58cc9b}{get\+Dist} (Int ci, Int cj)
 \begin{DoxyCompactList}\small\item\em Compute the Euclidean distance between a pair of inputs. \end{DoxyCompactList}\item 
-Int \hyperlink{classpgpr__domain_a814453a62ebc1ae9b4e420323bf013c2}{sel\-Rand} (\hyperlink{structt__state}{t\-\_\-state} $\ast$st)
+Int \hyperlink{classpgpr__domain_a814453a62ebc1ae9b4e420323bf013c2}{sel\+Rand} (\hyperlink{structt__state}{t\+\_\+state} $\ast$st)
 \begin{DoxyCompactList}\small\item\em Select randomly an index of a set, which is not selected. \end{DoxyCompactList}\item 
-Int \hyperlink{classpgpr__domain_a55b740e3d3a4a0c5bf86cd14895cd76b}{get\-Attr} (Int s, Doub $\ast$a)
+Int \hyperlink{classpgpr__domain_a55b740e3d3a4a0c5bf86cd14895cd76b}{get\+Attr} (Int s, Doub $\ast$a)
 \begin{DoxyCompactList}\small\item\em Get the attributes of an input and its corresponding outputs. \end{DoxyCompactList}\item 
-Int \hyperlink{classpgpr__domain_ae07953124466fffafd45013bd7917ddd}{get\-Neighbour} (Int s, \hyperlink{classpgpr__vector}{Vint} \&c)
+Int \hyperlink{classpgpr__domain_ae07953124466fffafd45013bd7917ddd}{get\+Neighbour} (Int s, \hyperlink{classpgpr__vector}{Vint} \&c)
 \begin{DoxyCompactList}\small\item\em Get a set of indices corresponding to the set of inputs which connected with a specific input. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -38,9 +38,9 @@ Int \hyperlink{classpgpr__domain_ae07953124466fffafd45013bd7917ddd}{get\-Neighbo
 This class stores the domain data in a matrix manner. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classpgpr__domain_ac527084df0c657962f29a554da0b3eea}{\index{pgpr\-\_\-domain@{pgpr\-\_\-domain}!pgpr\-\_\-domain@{pgpr\-\_\-domain}}
-\index{pgpr\-\_\-domain@{pgpr\-\_\-domain}!pgpr_domain@{pgpr\-\_\-domain}}
-\subsubsection[{pgpr\-\_\-domain}]{\setlength{\rightskip}{0pt plus 5cm}pgpr\-\_\-domain\-::pgpr\-\_\-domain (
+\hypertarget{classpgpr__domain_ac527084df0c657962f29a554da0b3eea}{\index{pgpr\+\_\+domain@{pgpr\+\_\+domain}!pgpr\+\_\+domain@{pgpr\+\_\+domain}}
+\index{pgpr\+\_\+domain@{pgpr\+\_\+domain}!pgpr\+\_\+domain@{pgpr\+\_\+domain}}
+\subsubsection[{pgpr\+\_\+domain}]{\setlength{\rightskip}{0pt plus 5cm}pgpr\+\_\+domain\+::pgpr\+\_\+domain (
 \begin{DoxyParamCaption}
 \item[{{\bf Mint}}]{n, }
 \item[{{\bf Mdoub}}]{a}
@@ -60,9 +60,9 @@ Constructor.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classpgpr__domain_a55b740e3d3a4a0c5bf86cd14895cd76b}{\index{pgpr\-\_\-domain@{pgpr\-\_\-domain}!get\-Attr@{get\-Attr}}
-\index{get\-Attr@{get\-Attr}!pgpr_domain@{pgpr\-\_\-domain}}
-\subsubsection[{get\-Attr}]{\setlength{\rightskip}{0pt plus 5cm}Int pgpr\-\_\-domain\-::get\-Attr (
+\hypertarget{classpgpr__domain_a55b740e3d3a4a0c5bf86cd14895cd76b}{\index{pgpr\+\_\+domain@{pgpr\+\_\+domain}!get\+Attr@{get\+Attr}}
+\index{get\+Attr@{get\+Attr}!pgpr\+\_\+domain@{pgpr\+\_\+domain}}
+\subsubsection[{get\+Attr}]{\setlength{\rightskip}{0pt plus 5cm}Int pgpr\+\_\+domain\+::get\+Attr (
 \begin{DoxyParamCaption}
 \item[{Int}]{s, }
 \item[{Doub $\ast$}]{a}
@@ -79,9 +79,9 @@ Get the attributes of an input and its corresponding outputs.
 \mbox{\tt out}  & {\em a} & pointor to an array that stores the attributes \\
 \hline
 \end{DoxyParams}
-\hypertarget{classpgpr__domain_ac24189f56e27aad49dee703f5a58cc9b}{\index{pgpr\-\_\-domain@{pgpr\-\_\-domain}!get\-Dist@{get\-Dist}}
-\index{get\-Dist@{get\-Dist}!pgpr_domain@{pgpr\-\_\-domain}}
-\subsubsection[{get\-Dist}]{\setlength{\rightskip}{0pt plus 5cm}Doub pgpr\-\_\-domain\-::get\-Dist (
+\hypertarget{classpgpr__domain_ac24189f56e27aad49dee703f5a58cc9b}{\index{pgpr\+\_\+domain@{pgpr\+\_\+domain}!get\+Dist@{get\+Dist}}
+\index{get\+Dist@{get\+Dist}!pgpr\+\_\+domain@{pgpr\+\_\+domain}}
+\subsubsection[{get\+Dist}]{\setlength{\rightskip}{0pt plus 5cm}Doub pgpr\+\_\+domain\+::get\+Dist (
 \begin{DoxyParamCaption}
 \item[{Int}]{ci, }
 \item[{Int}]{cj}
@@ -101,9 +101,9 @@ Compute the Euclidean distance between a pair of inputs.
 \begin{DoxyReturn}{Returns}
 Value of Euclidean distance 
 \end{DoxyReturn}
-\hypertarget{classpgpr__domain_ae07953124466fffafd45013bd7917ddd}{\index{pgpr\-\_\-domain@{pgpr\-\_\-domain}!get\-Neighbour@{get\-Neighbour}}
-\index{get\-Neighbour@{get\-Neighbour}!pgpr_domain@{pgpr\-\_\-domain}}
-\subsubsection[{get\-Neighbour}]{\setlength{\rightskip}{0pt plus 5cm}Int pgpr\-\_\-domain\-::get\-Neighbour (
+\hypertarget{classpgpr__domain_ae07953124466fffafd45013bd7917ddd}{\index{pgpr\+\_\+domain@{pgpr\+\_\+domain}!get\+Neighbour@{get\+Neighbour}}
+\index{get\+Neighbour@{get\+Neighbour}!pgpr\+\_\+domain@{pgpr\+\_\+domain}}
+\subsubsection[{get\+Neighbour}]{\setlength{\rightskip}{0pt plus 5cm}Int pgpr\+\_\+domain\+::get\+Neighbour (
 \begin{DoxyParamCaption}
 \item[{Int}]{s, }
 \item[{{\bf Vint} \&}]{c}
@@ -123,11 +123,11 @@ Get a set of indices corresponding to the set of inputs which connected with a s
 \begin{DoxyReturn}{Returns}
 Number of the connected inputs 
 \end{DoxyReturn}
-\hypertarget{classpgpr__domain_a814453a62ebc1ae9b4e420323bf013c2}{\index{pgpr\-\_\-domain@{pgpr\-\_\-domain}!sel\-Rand@{sel\-Rand}}
-\index{sel\-Rand@{sel\-Rand}!pgpr_domain@{pgpr\-\_\-domain}}
-\subsubsection[{sel\-Rand}]{\setlength{\rightskip}{0pt plus 5cm}Int pgpr\-\_\-domain\-::sel\-Rand (
+\hypertarget{classpgpr__domain_a814453a62ebc1ae9b4e420323bf013c2}{\index{pgpr\+\_\+domain@{pgpr\+\_\+domain}!sel\+Rand@{sel\+Rand}}
+\index{sel\+Rand@{sel\+Rand}!pgpr\+\_\+domain@{pgpr\+\_\+domain}}
+\subsubsection[{sel\+Rand}]{\setlength{\rightskip}{0pt plus 5cm}Int pgpr\+\_\+domain\+::sel\+Rand (
 \begin{DoxyParamCaption}
-\item[{{\bf t\-\_\-state} $\ast$}]{st}
+\item[{{\bf t\+\_\+state} $\ast$}]{st}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{classpgpr__domain_a814453a62ebc1ae9b4e420323bf013c2}
 
@@ -144,6 +144,6 @@ the index of an input
 \end{DoxyReturn}
 
 
-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-src/\hyperlink{pgpr__data_8h}{pgpr\-\_\-data.\-h}\end{DoxyCompactItemize}
+src/\hyperlink{pgpr__data_8h}{pgpr\+\_\+data.\+h}\end{DoxyCompactItemize}

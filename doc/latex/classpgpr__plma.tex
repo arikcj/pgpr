@@ -1,0 +1,79 @@
+\hypertarget{classpgpr__plma}{\section{pgpr\+\_\+plma Class Reference}
+\label{classpgpr__plma}\index{pgpr\+\_\+plma@{pgpr\+\_\+plma}}
+}
+
+
+This class provides the regression function using P\+L\+M\+A Approximation.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpgpr__plma_a91e6492d35e220988b68d49cfe851d61}{pgpr\+\_\+plma} (Char $\ast$hypf, Char $\ast$train, Char $\ast$test, Char $\ast$supset, int band, int blks)
+\begin{DoxyCompactList}\small\item\em Every machine loads the corresponding portion of data, and cluster the test data into nearest blocks. \end{DoxyCompactList}\item 
+void \hyperlink{classpgpr__plma_a52c35beeae947892f4f22145a1d91953}{plma\+\_\+regr} ()
+\begin{DoxyCompactList}\small\item\em main funciton for L\+M\+A regression \end{DoxyCompactList}\item 
+\hypertarget{classpgpr__plma_a453028ebd8039f0ba8a89af23e5e7f85}{int {\bfseries regress} ()}\label{classpgpr__plma_a453028ebd8039f0ba8a89af23e5e7f85}
+
+\item 
+\hypertarget{classpgpr__plma_a4b8bd4f97865f60e90baa88c3ed54b68}{void {\bfseries output\+Rst} (Char $\ast$output)}\label{classpgpr__plma_a4b8bd4f97865f60e90baa88c3ed54b68}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides the regression function using P\+L\+M\+A Approximation. 
+
+regression 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpgpr__plma_a91e6492d35e220988b68d49cfe851d61}{\index{pgpr\+\_\+plma@{pgpr\+\_\+plma}!pgpr\+\_\+plma@{pgpr\+\_\+plma}}
+\index{pgpr\+\_\+plma@{pgpr\+\_\+plma}!pgpr\+\_\+plma@{pgpr\+\_\+plma}}
+\subsubsection[{pgpr\+\_\+plma}]{\setlength{\rightskip}{0pt plus 5cm}pgpr\+\_\+plma\+::pgpr\+\_\+plma (
+\begin{DoxyParamCaption}
+\item[{Char $\ast$}]{hypf, }
+\item[{Char $\ast$}]{train, }
+\item[{Char $\ast$}]{test, }
+\item[{Char $\ast$}]{supset, }
+\item[{int}]{band, }
+\item[{int}]{blks}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classpgpr__plma_a91e6492d35e220988b68d49cfe851d61}
+
+
+Every machine loads the corresponding portion of data, and cluster the test data into nearest blocks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hypf} & the hyperparameter file name \\
+\hline
+{\em train} & file name of the training data \\
+\hline
+{\em test} & file name of the test data \\
+\hline
+{\em supset} & file name of the support set \\
+\hline
+{\em band} & the bandwidth of L\+M\+A method \\
+\hline
+{\em blks} & the number of machines/blocks \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpgpr__plma_a52c35beeae947892f4f22145a1d91953}{\index{pgpr\+\_\+plma@{pgpr\+\_\+plma}!plma\+\_\+regr@{plma\+\_\+regr}}
+\index{plma\+\_\+regr@{plma\+\_\+regr}!pgpr\+\_\+plma@{pgpr\+\_\+plma}}
+\subsubsection[{plma\+\_\+regr}]{\setlength{\rightskip}{0pt plus 5cm}void pgpr\+\_\+plma\+::plma\+\_\+regr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classpgpr__plma_a52c35beeae947892f4f22145a1d91953}
+
+
+main funciton for L\+M\+A regression 
+
+The procedure is mainly following the A\+A\+A\+I2015 paper. Please read the paper to understand the full details of the implementation. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{pgpr__plma_8h}{pgpr\+\_\+plma.\+h}\end{DoxyCompactItemize}

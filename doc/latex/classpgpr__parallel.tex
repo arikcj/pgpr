@@ -1,0 +1,44 @@
+\hypertarget{classpgpr__parallel}{\section{pgpr\+\_\+parallel Class Reference}
+\label{classpgpr__parallel}\index{pgpr\+\_\+parallel@{pgpr\+\_\+parallel}}
+}
+
+
+the class provides the M\+P\+I\+C\+H interface to commmunicate among the machines  
+
+
+
+
+{\ttfamily \#include $<$pgpr\+\_\+parallel.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classpgpr__parallel_a59d7312d6ce0405ce14bd5c0e7276c3d}{{\bfseries pgpr\+\_\+parallel} (int r)}\label{classpgpr__parallel_a59d7312d6ce0405ce14bd5c0e7276c3d}
+
+\item 
+\hypertarget{classpgpr__parallel_afe739849549bccc2b67a5cd6c52f8a50}{void {\bfseries set\+Rank} (int r)}\label{classpgpr__parallel_afe739849549bccc2b67a5cd6c52f8a50}
+
+\item 
+\hypertarget{classpgpr__parallel_a09094599d381034f13dfdc81bd8aac81}{void {\bfseries send\+\_\+msg} (const Matrix$<$ double, Dynamic, Dynamic, Row\+Major $>$ \&msg, int ori, int dest)}\label{classpgpr__parallel_a09094599d381034f13dfdc81bd8aac81}
+
+\item 
+\hypertarget{classpgpr__parallel_a19e0b4394bce0be9c44d2fa271ca8f63}{void {\bfseries send\+\_\+msg} (const Matrix\+Xd \&msg, int ori, int dest)}\label{classpgpr__parallel_a19e0b4394bce0be9c44d2fa271ca8f63}
+
+\item 
+\hypertarget{classpgpr__parallel_ab1340309f9b2df03effc1c4a0bc2867b}{void {\bfseries recv\+\_\+msg} (Matrix\+Xd \&msg, int ori, int flag)}\label{classpgpr__parallel_ab1340309f9b2df03effc1c4a0bc2867b}
+
+\item 
+\hypertarget{classpgpr__parallel_ac810020b3e7073b70a44b5025f32652c}{void {\bfseries Map\+Reduce} (const Matrix\+Xd \&map, Matrix\+Xd \&reduce, M\+P\+I\+\_\+\+Op op, int dest)}\label{classpgpr__parallel_ac810020b3e7073b70a44b5025f32652c}
+
+\item 
+\hypertarget{classpgpr__parallel_a6e8694a4add7f56ac4a1264070994feb}{void {\bfseries sync} ()}\label{classpgpr__parallel_a6e8694a4add7f56ac4a1264070994feb}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+the class provides the M\+P\+I\+C\+H interface to commmunicate among the machines 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/pgpr\+\_\+parallel.\+h\end{DoxyCompactItemize}

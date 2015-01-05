@@ -3,7 +3,7 @@ DEMO_DIR = $(HOME)/demo
 SRC_DIR = $(HOME)/src
 LIB_DIR = $(HOME)/lib
 LIBS = -lpthread 
-INCS = -I$(SRC_DIR) 
+INCS = -I$(SRC_DIR) -I$(LIB_DIR) 
 CC = mpicxx
 CFLAGS=  -O3 -D__x86_64__
 #CFLGAS= -D_LINUX_ -O3 -D__x86_64__
@@ -21,8 +21,9 @@ deps:
 
 .PHONY: all clean deps release debug echo doc
 
-all: fgp prep pic pitc ppitc ppic 
-
+all: fgp prep pic pitc ppitc ppic eigen
+eigen: deps $(OBJS)
+	$(CC) $(CFLAGS) $(LDFLAGS) $(INCS) $(LIBS) $(OBJS) $(DEMO_DIR)/demo_prep.cc -o $(DEMO_DIR)/$@
 prep: deps $(OBJS)
 	$(CC) $(CFLAGS) $(LDFLAGS) $(INCS) $(LIBS) $(OBJS) $(DEMO_DIR)/demo_prep.cc -o $(DEMO_DIR)/$@
 fgp: deps $(OBJS)
@@ -35,7 +36,10 @@ ppic: deps $(OBJS)
 	$(CC) $(CFLAGS) $(LDFLAGS) $(INCS) $(LIBS) $(OBJS) $(DEMO_DIR)/demo_ppic.cc -o $(DEMO_DIR)/$@
 ppitc: deps $(OBJS)
 	$(CC) $(CFLAGS) $(LDFLAGS) $(INCS) $(LIBS) $(OBJS) $(DEMO_DIR)/demo_ppitc.cc -o $(DEMO_DIR)/$@
-
+plma: deps $(OBJS)
+	$(CC) $(CFLAGS) $(LDFLAGS) $(INCS) $(LIBS) $(OBJS) $(DEMO_DIR)/demo_plma.cc -o $(DEMO_DIR)/$@
+lma: deps $(OBJS)
+	$(CC) $(CFLAGS) $(LDFLAGS) $(INCS) $(LIBS) $(OBJS) $(DEMO_DIR)/demo_lma.cc -o $(DEMO_DIR)/$@
 echo:
 	@echo CC: $(CC)
 	@echo CFLAGS: $(CFLAGS)

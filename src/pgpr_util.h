@@ -15,9 +15,11 @@
 #include <mach/clock.h>
 #include <mach/mach.h>
 #endif
+#include <Eigen/Dense>
 #include "pgpr_type.h"
-#include "pgpr_chol.h"
 
+#include "pgpr_chol.h"
+using namespace Eigen;
 #define LEV_PRG 0
 #define LEV_DBG 5
 #define LEV_ALL 10
@@ -52,7 +54,6 @@ inline const T &MIN(const T &a, const T &b)
 {
   return b < a ? (b) : (a);
 }
-
 inline float MIN(const double &a, const float &b)
 {
   return b < a ? (b) : float(a);
@@ -128,6 +129,78 @@ inline Int saveData(Char * file, Mdoub m_data)
   return SUCC;
 }
 
+
+inline Int loadLocalData(Char * file, MatrixXd &m_data, Int blocksize, Int ss, Int blocks)
+{
+  FILE * fp = fopen(file, "r");
+  if(fp == NULL) {
+    throw("load data: Fail to open file\n");
+  }
+  Int ddim = m_data.rows();
+  Int dsize = blocksize * blocks;
+  m_data.resize(ddim,dsize);
+  Doub tmp;
+  Int i_tmp;
+  Int cur_line = 0;
+  //skip data not belonging to current machine
+  while(cur_line < blocksize * ss){
+    fscanf(fp, "%lf ", &tmp);
+    for(Int j = 0; j < ddim - 1; j++) {
+      fscanf(fp, "%d:%lf ", &i_tmp, &tmp);
+    }
+    fscanf(fp, "\n");
+    cur_line ++;
+  }
+  for(Int i = 0; i < dsize; i++) {
+    fscanf(fp, "%lf ", &tmp);
+    m_data(ddim - 1, i) = tmp;
+    for(Int j = 0; j < ddim - 1; j++) {
+      fscanf(fp, "%d:%lf ", &i_tmp, &tmp);
+      m_data(j, i) = tmp;
+    }
+    fscanf(fp, "\n");
+  }
+  fclose(fp);
+  return dsize;
+}
+
+
+
+inline Int loadLocalData(Char * file, Mdoub &m_data, Int blocksize, Int ss, Int blocks)
+{
+  FILE * fp = fopen(file, "r");
+  if(fp == NULL) {
+    throw("load data: Fail to open file\n");
+  }
+  Int ddim = m_data.ncols();
+  Int dsize = blocksize * blocks;
+  m_data.resize(dsize, ddim);
+  Doub tmp;
+  Int i_tmp;
+  Int cur_line = 0;
+  char line[5];
+  //skip data not belonging to current machine
+  while(cur_line < blocksize * ss){
+    fscanf(fp, "%lf ", &tmp);
+    for(Int j = 0; j < ddim - 1; j++) {
+      fscanf(fp, "%d:%lf ", &i_tmp, &tmp);
+    }
+    fscanf(fp, "\n");
+    cur_line ++;
+ }
+    for(Int i = 0; i < dsize; i++) {
+    fscanf(fp, "%lf ", &tmp);
+    m_data[i][ddim - 1] = tmp;
+    for(Int j = 0; j < ddim - 1; j++) {
+      fscanf(fp, "%d:%lf ", &i_tmp, &tmp);
+      m_data[i][j] = tmp;
+    }
+    fscanf(fp, "\n");
+  }
+  fclose(fp);
+  return dsize;
+}
+
 inline Int loadData(Char * file, Mdoub &m_data)
 {
   FILE * fp = fopen(file, "r");
@@ -151,6 +224,31 @@ inline Int loadData(Char * file, Mdoub &m_data)
   fclose(fp);
   return dsize;
 }
+
+inline Int loadData(Char * file, MatrixXd &m_data)
+{
+  FILE * fp = fopen(file, "r");
+  if(fp == NULL) {
+    throw("load data: Fail to open file\n");
+  }
+  Int ddim = m_data.rows();
+  Int dsize = getLines(file);
+  m_data.resize(ddim, dsize);
+  Doub tmp;
+  Int i_tmp;
+  for(Int i = 0; i < dsize; i++) {
+    fscanf(fp, "%lf ", &tmp);
+    m_data(ddim - 1, i) = tmp;
+    for(Int j = 0; j < ddim - 1; j++) {
+      fscanf(fp, "%d:%lf ", &i_tmp, &tmp);
+      m_data(j, i) = tmp;
+    }
+    fscanf(fp, "\n");
+  }
+  fclose(fp);
+  return dsize;
+}
+
 
 inline Int saveHyper(Char * file, Vdoub h, Int d)
 {
@@ -345,6 +443,20 @@ inline Int argmaxi(Vdoub v)
   }
   return mi;
 }
+// Root mean square error (see section 6.1)
+double getRmse(const VectorXd &v1, const VectorXd &v2){
+		return SQRT( ((v1 - v2).dot(v1 - v2))/v1.rows() );
+}
+// Mean Negative Log Probability (see section 6.1)
+double getMnlp(const VectorXd &v1, const VectorXd &v2, const VectorXd &v3){
+	int sz = v1.rows();
+	double mnlp = 0;
+	for(int i = 0; i < sz; i++) {
+		mnlp += SQR(v1[i] - v2[i]) / v3[i] +  LOG(2 * 3.1416 * v3[i]);
+	}
+	mnlp = 0.5 * mnlp / sz;
+	return mnlp;
+}
 
 // Root mean square error (see section 6.1)
 inline Doub getRmse(Vdoub v1, Vdoub v2)
@@ -361,7 +473,6 @@ inline Doub getRmse(Vdoub v1, Vdoub v2)
   }
   return rmse;
 }
-
 // Mean Negative Log Probability (see section 6.1)
 inline Doub getMnlp(Vdoub v1, Vdoub v2, Vdoub v3)
 {

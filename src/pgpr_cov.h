@@ -23,7 +23,7 @@ public:
   pgpr_cov(Char * hypf) {
     FILE *fp = fopen(hypf, "r");
     if(fp == NULL) {
-      throw("Fail to open file of hyperparameters\n");
+		throw("Fail to open file of hyperparameters\n");
     }
     fscanf(fp, "%lf ", &sig);
     fscanf(fp, "%lf ", &nos);
@@ -32,8 +32,8 @@ public:
     lsc.resize(dim);
     Doub tmp;
     for (Int i = 0; i < dim; i++) {
-      fscanf(fp, "%lf ", &tmp);
-      lsc[i] = tmp;
+		fscanf(fp, "%lf ", &tmp);
+		lsc[i] = tmp;
     }
     fprintf(fp, "\n");
     fclose(fp);
@@ -53,7 +53,7 @@ public:
     dim = d;
   }
 
-  inline Doub se_ard_n(Doub *x, Doub *y) {
+  inline Doub se_ard_n(const Doub *x, const Doub *y) {
     Doub val = 0;
     for (Int i = 0; i < dim; i++) {
       val += SQR((x[i] - y[i]) / lsc[i]);
@@ -62,8 +62,15 @@ public:
     return sig * exp(-0.5 * val) + nos;
   }
 
+  inline Doub se_ard_n(const VectorXd &x, const VectorXd &y) {
+    Doub val = 0;
+    for (Int i = 0; i < dim; i++) {
+      val += SQR((x[i] - y[i]) / lsc[i]);
+    }
 
-  inline Doub se_ard(Doub *x, Doub *y) {
+    return sig * exp(-0.5 * val) + nos;
+  }
+  inline Doub se_ard(const Doub *x, const Doub *y) {
     Doub val = 0;
     for (Int i = 0; i < dim; i++) {
       val += SQR((x[i] - y[i]) / lsc[i]);
@@ -72,6 +79,14 @@ public:
     return sig * exp(-0.5 * val);
   }
 
+  inline Doub se_ard(const VectorXd &x, const VectorXd &y) {
+    Doub val = 0;
+    for (Int i = 0; i < dim; i++) {
+      val += SQR((x[i] - y[i]) / lsc[i]);
+    }
+
+    return sig * exp(-0.5 * val);
+  }
   inline void se_ard_n(Mdoub a, Int ss, Mdoub &k) {
     if (k.nrows() != ss) {
       k.resize(ss, ss);
@@ -86,16 +101,31 @@ public:
         }
       }
     }
-
-
   }
 
-  inline void se_ard(Mdoub a, Int ss, Mdoub &k) {
-
+  inline void se_ard_n(const MatrixXd &a, MatrixXd &k) {
+	  Int ss = a.cols();
+	  if (k.rows() != ss) {
+		  k.resize(ss, ss);
+	  }
+	  for (Int i = 0; i < ss; i++) {
+		  for (Int j = i; j < ss; j++) {
+			  VectorXd r_i = a.col(i);
+			  VectorXd r_j = a.col(j);
+			  k(i,j) = se_ard(r_i, r_j);
+			  if(i == j) {
+				  k(i,j) += nos;
+			  } else {
+				  k(j,i) = k(i,j);
+			  }
+		  }
+	  }
+  }
+  
+  inline void se_ard(const Mdoub &a, Int ss, Mdoub &k) {
     if (k.nrows() != ss) {
       k.resize(ss, ss);
     }
-
     for (Int i = 0; i < ss; i++) {
       for (Int j = i; j < ss; j++) {
         k[i][j] = se_ard(a[i], a[j]);
@@ -104,11 +134,27 @@ public:
         }
       }
     }
-
-
   }
 
-  //K_AB
+  inline void se_ard(const MatrixXd &a, MatrixXd &k) {
+	Int  ss = a.cols();
+    if (k.rows() != ss) {
+      k.resize(ss, ss);
+    }
+    for (Int i = 0; i < ss; i++) {
+      for (Int j = i; j < ss; j++) {
+		  VectorXd r_i = a.col(i);
+		  VectorXd r_j = a.col(j);
+		  k(i,j) = se_ard(r_i, r_j);
+        if(i != j) {
+			k(j,i) = k(i,j);
+        }
+      }
+    }
+  }
+  
+
+  //K_AB Mdoub version
   inline void se_ard(Mdoub a, Int ssa, Mdoub b, Int ssb, Mdoub &k) {
     k.resize(ssa, ssb);
     for (Int i = 0; i < ssa; i++) {
@@ -118,6 +164,34 @@ public:
       }
     }
 
+  }
+
+  //K_AB Eigen version
+  inline void se_ard(const MatrixXd &a, const MatrixXd &b, MatrixXd &k) {
+	  Int ssa = a.cols();
+	  Int ssb = b.cols();
+	  k.resize(ssa, ssb);
+	  for (Int i = 0; i < ssa; i++) {
+		  for (Int j = 0; j < ssb; j++) {
+			  VectorXd r_i = a.col(i);
+			  VectorXd r_j = b.col(j);
+			  k(i,j) = se_ard(r_i,r_j);
+		  }
+	  }
+  }
+
+//K_AB Eigen version
+  inline void se_ard(const MatrixXd &a, const vector<VectorXd> &b, MatrixXd &k) {
+	  Int ssa = a.cols();
+	  Int ssb = b.size();
+	  k.resize(ssa, ssb);
+	  for (Int i = 0; i < ssa; i++) {
+		  for (Int j = 0; j < ssb; j++) {
+			  VectorXd r_i = a.col(i);
+			  VectorXd r_j = b[j];
+			  k(i,j) = se_ard(r_i,r_j);
+		  }
+	  }
   }
 };
 #endif
