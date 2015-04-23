@@ -7,7 +7,7 @@ The implementation of parallel Gaussian process (GP) regression is based on the 
 1. Jie Chen, Nannan Cao, Kian Hsiang Low, Ruofei Ouyang, Colin Keng-Yan Tan & Patrick Jaillet. Parallel Gaussian Process Regression with Low-Rank Covariance Matrix Approximations. In Proceedings of the 29th Conference on Uncertainty in Artificial Intelligence (UAI 2013), Bellevue, WA, Jul 11-15, 2013. It can be found at http://arxiv.org/abs/1305.5826 or http://www.comp.nus.edu.sg/~lowkh/pubs/uai2013.pdf.
 
 2. Kian Hsiang Low, Jiangbo Yu, Jie Chen and Patrick Jaillet. Parallel Gaussian Process Regression for Big Data: Low-Rank Representation Meets Markov Approximation. In Proceedings of the 29th AAAI Conference on Artificial Intelligence (AAAI-15), Austin, TX, Jan 25-29, 2015. It can be found at http://www.comp.nus.edu.sg/~lowkh/pubs/aaai2015.pdf or http://arxiv.org/abs/1411.4510.
-========================================================================
+
 1. System requirements 
 ------------------------------------------------------------------------
 Linux/Unix/MacOS X environment
